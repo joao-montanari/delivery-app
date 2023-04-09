@@ -2,7 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './src/pages/home';
-import SingIn from './src/pages/singin';
+import SignIn from './src/pages/signin';
+import SignUp from './src/pages/signup';
 
 const Pilha = createStackNavigator();
 
@@ -16,8 +17,13 @@ export default function Routers() {
                     options={{ headerShown: false }}
                 />
                 <Pilha.Screen
-                    name = 'SingIn'
-                    component={SingIn}
+                    name = 'SignIn'
+                    component={SignIn}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name = 'SignUp'
+                    component={SignUp}
                     options={{ headerShown: false }}
                 />
             </Pilha.Navigator>

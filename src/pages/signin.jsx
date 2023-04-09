@@ -5,13 +5,13 @@ import { useState } from "react";
 
 import Home from "./home";
 
-export default function SingIn() {
+export default function SignIn() {
     const navigate = useNavigation();
     const [password, onChangePassword] = useState();
     const [email, onChangeEmail] = useState();
 
     return(
-        <>
+        <View style={styles.main}>
             <View style={styles.child}>
                 <TouchableOpacity onPress={() => { navigate.navigate(Home) }} >
                     <Image
@@ -32,13 +32,13 @@ export default function SingIn() {
                     style = {styles.input}
                     onChangeText = {onChangeEmail}
                     value = {email}
-                    placeholder = "✉️ E-mail"
+                    placeholder = "E-mail"
                 />
                 <TextInput
                     style = {styles.input}
                     onChangeText = {onChangePassword}
                     value = {password}
-                    placeholder = "🔑 Senha"
+                    placeholder = "Senha"
                 />
                 <TouchableOpacity style={styles.btnentrar}>
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: '18px', }}>
@@ -69,11 +69,15 @@ export default function SingIn() {
                     </TouchableOpacity>
                 </View>
             </View>
-        </>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
+    main: {
+        flex: '1',
+        backgroundColor: "#181A20",
+    },
     container: {
         flex: '0.90',
         backgroundColor: "#181A20",
