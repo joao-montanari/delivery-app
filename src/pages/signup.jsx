@@ -4,13 +4,19 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
 
 import Home from "./home";
+import Shopping from "./shopping";
 
 export default function SignUp() {
     const navigate = useNavigation();
+
     const [email, onChangeEmail] = useState();
     const [nome, onChangeNome] = useState();
     const [password, onChangePassword] = useState();
     const [confpassword, onChangeConfpassword] = useState();
+
+    function Cadastro() {
+        navigate.navigate(Shopping);
+    }
 
     return(
         <View style = {styles.main}>
@@ -54,7 +60,7 @@ export default function SignUp() {
                     value = {confpassword}
                     placeholder = "Confirme a senha"
                 />
-                <TouchableOpacity style={styles.btncadastrar}>
+                <TouchableOpacity style={styles.btncadastrar} onPress={() => { navigate.navigate(Shopping)}} >
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: '18px', }}>
                         Cadastrar
                     </Text>

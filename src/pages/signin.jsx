@@ -4,11 +4,17 @@ import React from "react";
 import { useState } from "react";
 
 import Home from "./home";
+import Shopping from "./shopping";
 
 export default function SignIn() {
     const navigate = useNavigation();
+
     const [password, onChangePassword] = useState();
     const [email, onChangeEmail] = useState();
+
+    function Login() {
+        navigate.navigate(Shopping);
+    }
 
     return(
         <View style={styles.main}>
@@ -40,7 +46,7 @@ export default function SignIn() {
                     value = {password}
                     placeholder = "Senha"
                 />
-                <TouchableOpacity style={styles.btnentrar}>
+                <TouchableOpacity style={styles.btnentrar} onPress={() => { navigate.navigate(Shopping) }}>
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: '18px', }}>
                         Entrar
                     </Text>

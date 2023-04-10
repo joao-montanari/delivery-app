@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/pages/home';
 import SignIn from './src/pages/signin';
 import SignUp from './src/pages/signup';
+import Shopping from './src/pages/shopping';
 
 const Pilha = createStackNavigator();
 
@@ -24,6 +25,11 @@ export default function Routers() {
                 <Pilha.Screen
                     name = 'SignUp'
                     component={SignUp}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name = 'Shopping'
+                    component={Shopping}
                     options={{ headerShown: false }}
                 />
             </Pilha.Navigator>
