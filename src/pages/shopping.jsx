@@ -4,6 +4,15 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
 
 import TopBar from "../components/topbar";
+import Vegetables from './vegetables';
+import Salads from './salads';
+import Fruits from "./fruits";
+import Sauces from './sauces';
+import Fish from './fish';
+import Cultivation from './cultivation';
+import Plants from './plants';
+import Kitchen from './kitchen';
+
 
 export default function Shopping() {
     const navigate = useNavigation();
@@ -27,6 +36,7 @@ export default function Shopping() {
                     <View style={styles.child}>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Vegetables) }}
                         >
                             <Image
                                 source = {require('../../public/icons/legume.svg')}
@@ -38,6 +48,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Salads) }}
                         >
                             <Image
                                 source = {require('../../public/icons/salada.svg')}
@@ -49,6 +60,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Fruits) }}
                         >
                             <Image
                                 source = {require('../../public/icons/fruta.svg')}
@@ -60,6 +72,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Sauces) }}
                         >
                             <Image
                                 source = {require('../../public/icons/molho.svg')}
@@ -73,6 +86,7 @@ export default function Shopping() {
                     <View style={styles.child}>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Fish) }}
                         >
                             <Image
                                 source = {require('../../public/icons/peixe.svg')}
@@ -84,6 +98,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Cultivation) }}
                         >
                             <Image
                                 source = {require('../../public/icons/agricultura.svg')}
@@ -95,6 +110,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Plants) }}
                         >
                             <Image
                                 source = {require('../../public/icons/planta.svg')}
@@ -106,6 +122,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
+                            onPress={() => { navigate.navigate(Kitchen) }}
                         >
                             <Image
                                 source = {require('../../public/icons/cozinha.svg')}
