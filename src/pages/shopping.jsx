@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
 
 import TopBar from "../components/topbar";
+import BottomBar from "../components/bottombar";
+
 import Vegetables from './vegetables';
 import Salads from './salads';
 import Fruits from "./fruits";
@@ -135,6 +137,7 @@ export default function Shopping() {
                     </View>
                 </View>
             </View>
+            <BottomBar/>
         </View>
     )
 }
@@ -145,7 +148,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
     },
     container: {
-        flex: '0.9',
+        flex: '0.8',
         backgroundColor: '#181A20',
     },
     input: {
