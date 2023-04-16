@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from 'prop-types'
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-export default function TopBar(props) {
+export default function TopBar({ name, photo }) {
     return (
         <View style={style.container}>
             <View style={style.child}>
                 <View style={style.boxleft}>
                     <Image
-                        source = {{ uri: props.photo }}
+                        source = {{ uri: photo }}
                         style = {{ width: '50px', height: '50px' }}
                     />
                     <View style={{ marginLeft: '10px' }}>
@@ -16,7 +16,7 @@ export default function TopBar(props) {
                             Usuário:
                         </Text>
                         <Text style={{ color: '#fff', fontSize: '16px' }}>
-                            {props.name}
+                            {name}
                         </Text>
                     </View>
                 </View>
@@ -51,7 +51,6 @@ const style = StyleSheet.create({
         margin: 'auto',
     },
     boxleft: {
-        border: '1px solid #fff',
         flexDirection: 'row',
         margin: 'auto',
         width: '60%',
@@ -59,7 +58,6 @@ const style = StyleSheet.create({
         alignItems: 'center',
     },
     boxright: {
-        border: '1px solid #fff',
         flexDirection: 'row',
         margin: 'auto',
         width: '40%',
@@ -78,5 +76,5 @@ const style = StyleSheet.create({
 
 TopBar.defaultProps = {
     name: 'Indefinido',
-    data: 'https://www.citypng.com/public/uploads/small/116399610936x9dkjmtnusfoaai6t2zjdnsqdyt7awdjntzcod7chrjrkay6qhj4szfjpdhlsun0dlcoyp5iez3unwc8pafjzofujmluc7hxf9d.png'
+    photo: 'https://www.citypng.com/public/uploads/small/116399610936x9dkjmtnusfoaai6t2zjdnsqdyt7awdjntzcod7chrjrkay6qhj4szfjpdhlsun0dlcoyp5iez3unwc8pafjzofujmluc7hxf9d.png'
 }
