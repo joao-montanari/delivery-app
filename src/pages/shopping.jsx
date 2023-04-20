@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
+import Card from "../components/card";
 
 import Vegetables from './vegetables';
 import Salads from './salads';
@@ -135,6 +136,14 @@ export default function Shopping() {
                             </Text>
                         </TouchableOpacity>
                     </View>
+                </View>
+                <View style={{ border: '1px solid #fff', width: '100%' }}>
+                    <Card
+                        name = 'Alface Hidropônico'
+                        evaluation = '4.0'
+                        price = '20.00'
+                        image = 'https://hidrogood.com.br/wp-content/uploads/2019/08/DSC03564-scaled.jpg'
+                    />
                 </View>
             </View>
             <BottomBar/>
