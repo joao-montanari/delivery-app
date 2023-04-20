@@ -57,19 +57,19 @@ export default function SignIn() {
                 <View style={styles.contas}>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
-                            source={require('../../public/icon-google.svg')}
+                            source={require('../../public/icons/google.svg')}
                             style={{ width: '35px', height: '35px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
-                            source={require('../../public/icon-meta.svg')}
+                            source={require('../../public/icons/meta.svg')}
                             style={{ width: '35px', height: '35px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
-                            source={require('../../public/icon-apple.svg')}
+                            source={require('../../public/icons/apple.svg')}
                             style={{ width: '35px', height: '35px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
