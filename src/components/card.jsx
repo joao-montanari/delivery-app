@@ -4,11 +4,13 @@ export default function Card({ name, price, image, evaluation }) {
     return (
         <View style={styles.main}>
             <View style={styles.container}>
-                <Image
-                    source={{ uri: image }}
-                    style = {{ width: '90px', height: '90px', borderRadius: '25px' }}
-                    alt="Imagem do produto"
-                />
+                <View style={{ width: '20%', minWidth: '90px' , border: '1px solid #fff' }}>
+                    <Image
+                        source={{ uri: image }}
+                        style = {{ width: '90px', height: '90px', borderRadius: '25px' }}
+                        alt="Imagem do produto"
+                    />
+                </View>
                 <View style={styles.child}>
                     <Text style={styles.title}>
                         {name}
@@ -61,8 +63,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     child: {
-        marginLeft: '12px',
+        paddingLeft: '12px',
         height: 'auto',
+        border: '1px solid #fff',
+        width: '80%',
     },
     title: {
         color: 'white',
@@ -71,9 +75,10 @@ const styles = StyleSheet.create({
     },
     box: {
         flexDirection: 'row',
-        width: '190px',
+        width: '100%',
         alignItems: 'center', 
         marginTop: '8px',
         position: 'relative',
+        border: '1px solid #fff',
     },
 })
