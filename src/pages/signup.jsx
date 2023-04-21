@@ -23,14 +23,14 @@ export default function SignUp() {
             <View style = {styles.child}>
                 <TouchableOpacity onPress={() => { navigate.navigate(Home) }} >
                     <Image
-                        source={require('../../public/voltar.png')}
+                        source={require('../../assets/voltar.png')}
                         style = {{ width: '35px', height: '35px', marginLeft: '30px', marginTop: '25px', }}
                     />
                 </TouchableOpacity>
             </View>
             <View style = {styles.container}>
                 <Image
-                    source={require('../../public/logo.png')}
+                    source={require('../../assets/logo.png')}
                     style={{ width : '100px', height : '100px' }}
                 />
                 <Text style={styles.sujestao}>
@@ -71,19 +71,19 @@ export default function SignUp() {
                 <View style={styles.contas}>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
-                            source={require('../../public/icons/google.svg')}
+                            source={require('../../assets/icons/google.svg')}
                             style={{ width: '35px', height: '35px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
-                            source={require('../../public/icons/meta.svg')}
+                            source={require('../../assets/icons/meta.svg')}
                             style={{ width: '35px', height: '35px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
-                            source={require('../../public/icons/apple.svg')}
+                            source={require('../../assets/icons/apple.svg')}
                             style={{ width: '35px', height: '35px', margin: 'auto' }}
                         />
                     </TouchableOpacity>

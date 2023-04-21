@@ -20,14 +20,14 @@ export default function Card({ name, price, image, evaluation }) {
                             Avaliação: {evaluation}
                         </Text>
                         <Image
-                            source={require('../../public/icons/estrela.svg')}
+                            source={require('../../assets/icons/estrela.svg')}
                             style={{ width: '15px', height: '15px', marginLeft: '8px' }}
                             alt="Estrelas"
                         />
                     </View>
                     <View style={styles.box}>
                         <Image
-                            source={require('../../public/icons/money.svg')}
+                            source={require('../../assets/icons/money.svg')}
                             style={{ width: '20px', height: '20px', marginRight: '5px' }}
                             alt="Icon preco"
                         />
@@ -35,7 +35,7 @@ export default function Card({ name, price, image, evaluation }) {
                             {price}
                         </Text>
                         <Image
-                            source={require('../../public/icons/coracao.svg')}
+                            source={require('../../assets/icons/coracao.svg')}
                             style={{ width: '20px', height: '20px', position: 'absolute', right: '0' }}
                             alt="Icon coracao"
                         />

@@ -8,25 +8,25 @@ export default function BottomBar() {
                 <View style={styles.child}>
                     <TouchableOpacity>
                         <Image
-                            source={require('../../public/icons/home.svg')}
+                            source={require('../../assets/icons/home.svg')}
                             style={styles.icons}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <Image
-                            source={require('../../public/icons/carrinho.svg')}
+                            source={require('../../assets/icons/carrinho.svg')}
                             style={styles.icons}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <Image
-                            source={require('../../public/icons/mapa.svg')}
+                            source={require('../../assets/icons/mapa.svg')}
                             style={styles.icons}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <Image
-                            source={require('../../public/icons/user.svg')}
+                            source={require('../../assets/icons/user.svg')}
                             style={styles.icons}
                         />
                     </TouchableOpacity>

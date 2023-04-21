@@ -10,7 +10,7 @@ export default function Home(){
     return(
         <View style={styles.container}>
             <Image
-                source={require('../../public/marca.png')}
+                source={require('../../assets/marca.png')}
                 style={{ width: '300px', height: '100px' }}
             />
             <TouchableOpacity style={styles.btnsingin} onPress={() => { navigate.navigate(SignIn) }}>

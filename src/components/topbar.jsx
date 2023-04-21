@@ -23,13 +23,13 @@ export default function TopBar({ name, photo }) {
                 <View style={style.boxright}>
                     <TouchableOpacity style={style.btn}>
                         <Image
-                            source={require('../../public/icons/favorito.svg')} 
+                            source={require('../../assets/icons/favorito.svg')} 
                             style = {{ width: '30px', height: '30px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={style.btn}>
                         <Image
-                            source={require('../../public/icons/carrinho.svg')} 
+                            source={require('../../assets/icons/carrinho.svg')} 
                             style = {{ width: '30px', height: '30px', margin: 'auto' }}
                         />
                     </TouchableOpacity>
