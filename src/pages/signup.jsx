@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import Home from "./home";
 import Shopping from "./shopping";
+import SimpleTopBar from "../components/simpletopbar";
 
 export default function SignUp() {
     const navigate = useNavigation();
@@ -20,14 +21,9 @@ export default function SignUp() {
 
     return(
         <View style = {styles.main}>
-            <View style = {styles.child}>
-                <TouchableOpacity onPress={() => { navigate.navigate(Home) }} >
-                    <Image
-                        source={require('../../assets/voltar.png')}
-                        style = {{ width: '35px', height: '35px', marginLeft: '30px', marginTop: '25px', }}
-                    />
-                </TouchableOpacity>
-            </View>
+            <SimpleTopBar
+                page={'home'}
+            />
             <View style = {styles.container}>
                 <Image
                     source={require('../../assets/logo.png')}
@@ -103,10 +99,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#181A20',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    child: {
-        flex: '0.1',
-        backgroundColor: '#181A20',
     },
     sujestao: {
         color: 'white',
