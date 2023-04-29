@@ -1,10 +1,10 @@
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "react-native";
 
-export default function Card({ name, price, image, evaluation }) {
+export default function Card({ name, price, image, evaluation, key }) {
     return (
-        <View style={styles.main}>
+        <View style={styles.main} key={key}>
             <View style={styles.container}>
-                <View style={{ width: '20%', minWidth: '90px' , border: '1px solid #fff' }}>
+                <View style={{ width: '20%', minWidth: '90px' }}>
                     <Image
                         source={{ uri: image }}
                         style = {{ width: '90px', height: '90px', borderRadius: '25px' }}
@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         alignItems: 'center',
+        justifyContent: 'center',
     },
     child: {
         paddingLeft: '12px',
         height: 'auto',
-        border: '1px solid #fff',
-        width: '80%',
+        width: '70%',
     },
     title: {
         color: 'white',
@@ -79,6 +79,5 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         marginTop: '8px',
         position: 'relative',
-        border: '1px solid #fff',
     },
 })

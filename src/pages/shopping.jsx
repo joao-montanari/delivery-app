@@ -19,6 +19,15 @@ import Kitchen from './kitchen';
 
 export default function Shopping() {
     const navigate = useNavigation();
+
+    const Produtos = [
+        {
+            name : 'Alface Hidropônico',
+            evaluation : '4.0',
+            price : '20.00',
+            image : 'https://hidrogood.com.br/wp-content/uploads/2019/08/DSC03564-scaled.jpg',
+        },
+    ]
     
     const [pesquisa, onChangePesquisa] = useState();
     
@@ -138,12 +147,17 @@ export default function Shopping() {
                     </View>
                 </View>
                 <View style={{ border: '1px solid #fff', width: '100%' }}>
-                    <Card
-                        name = 'Alface Hidropônico'
-                        evaluation = '4.0'
-                        price = '20.00'
-                        image = 'https://hidrogood.com.br/wp-content/uploads/2019/08/DSC03564-scaled.jpg'
-                    />
+                    {
+                        Produtos.map((produto, index) => (
+                            <Card
+                                key = {index}
+                                name = {produto.name}
+                                evaluation = {produto.evaluation}
+                                price = {produto.price}
+                                image = {produto.image}
+                            />
+                        ))
+                    }
                 </View>
             </View>
             <BottomBar/>
