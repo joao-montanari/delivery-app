@@ -1,8 +1,8 @@
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "react-native";
 
-export default function Card({ name, price, image, evaluation, key }) {
+export default function Card({ name, price, image, evaluation }) {
     return (
-        <View style={styles.main} key={key}>
+        <View style={styles.main}>
             <View style={styles.container}>
                 <View style={{ width: '20%', minWidth: '90px' }}>
                     <Image

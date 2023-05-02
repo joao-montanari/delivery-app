@@ -5,14 +5,16 @@ import Home from './src/pages/home';
 import SignIn from './src/pages/signin';
 import SignUp from './src/pages/signup';
 import Shopping from './src/pages/shopping';
-import Vegetables from './src/pages/vegetables';
-import Salads from './src/pages/salads';
-import Fruits from "./src/pages/fruits";
-import Sauces from './src/pages/sauces';
-import Fish from './src/pages/fish';
-import Cultivation from './src/pages/cultivation';
-import Plants from './src/pages/plants';
-import Kitchen from './src/pages/kitchen';
+import Cart from './src/pages/cart';
+
+import Vegetables from './src/pages/categories/vegetables';
+import Salads from './src/pages/categories/salads';
+import Fruits from "./src/pages/categories/fruits";
+import Sauces from './src/pages/categories/sauces';
+import Fish from './src/pages/categories/fish';
+import Cultivation from './src/pages/categories/cultivation';
+import Plants from './src/pages/categories/plants';
+import Kitchen from './src/pages/categories/kitchen';
 
 const Pilha = createStackNavigator();
 
@@ -40,6 +42,12 @@ export default function Routers() {
                     component={Shopping}
                     options={{ headerShown: false }}
                 />
+                <Pilha.Screen
+                    name = 'Cart'
+                    component={Cart}
+                    options={{ headerShown: false }}
+                />
+
                 <Pilha.Screen
                     name = 'Vegetables'
                     component={Vegetables}

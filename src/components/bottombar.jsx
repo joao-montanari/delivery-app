@@ -1,18 +1,24 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native"; 
+
+import Shopping from "../pages/shopping";
+import Cart from "../pages/cart";
 
 export default function BottomBar() {
+    const navigate = useNavigation();
+
     return (
         <View style={styles.main}>
             <View style={styles.container}>
                 <View style={styles.child}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {navigate.navigate(Shopping)}}>
                         <Image
                             source={require('../../assets/icons/home.svg')}
                             style={styles.icons}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {navigate.navigate(Cart)}}>
                         <Image
                             source={require('../../assets/icons/carrinho.svg')}
                             style={styles.icons}
