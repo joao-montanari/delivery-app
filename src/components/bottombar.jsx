@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import Shopping from "../pages/shopping";
 import Cart from "../pages/cart";
+import User from "../pages/user";
 
 export default function BottomBar() {
     const navigate = useNavigation();
@@ -30,7 +31,7 @@ export default function BottomBar() {
                             style={styles.icons}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {navigate.navigate(User)}}>
                         <Image
                             source={require('../../assets/icons/user.svg')}
                             style={styles.icons}
@@ -44,15 +45,15 @@ export default function BottomBar() {
 
 const styles = StyleSheet.create({
     main: {
-        flex: '0.1',
+        flex: 0.1,
         backgroundColor: '#181A20',
     },
     container: {
         backgroundColor: '#393939',
         width: '100%',
         height: '100%',
-        borderTopRightRadius: '25px',
-        borderTopLeftRadius: '25px',
+        borderTopRightRadius: 25,
+        borderTopLeftRadius: 25,
     },
     child: {
         flexDirection: 'row',
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
         margin: 'auto'
     },
     icons: {
-        width: '40px',
-        height: '40px',
+        width: 40,
+        height: 40,
     }
 })

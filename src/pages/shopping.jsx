@@ -80,7 +80,7 @@ export default function Shopping() {
                     placeholder="O que você está procurando?"
                 />
                 <View style={styles.box}>
-                    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: '25px', marginBottom: '5px' }}>
+                    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 25, marginBottom: 5 }}>
                         Categorias:
                     </Text>
                     <View style={styles.child}>
@@ -90,9 +90,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/legume.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Legumes
                             </Text>
                         </TouchableOpacity>
@@ -102,9 +102,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/salada.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Saladas
                             </Text>
                         </TouchableOpacity>
@@ -114,9 +114,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/fruta.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Frutas
                             </Text>
                         </TouchableOpacity>
@@ -126,9 +126,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/molho.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Molhos
                             </Text>
                         </TouchableOpacity>
@@ -140,9 +140,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/peixe.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Peixes
                             </Text>
                         </TouchableOpacity>
@@ -152,9 +152,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/agricultura.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 cultivo
                             </Text>
                         </TouchableOpacity>
@@ -164,9 +164,9 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/planta.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Plantas
                             </Text>
                         </TouchableOpacity>
@@ -176,20 +176,19 @@ export default function Shopping() {
                         >
                             <Image
                                 source = {require('../../assets/icons/cozinha.svg')}
-                                style = {{ width: '35px', height: '35px', marginTop: '5px' }}
+                                style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
-                            <Text style={{ color: '#BCBCBC', fontSize: '12px', marginTop: '2px' }}>
+                            <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
                                 Cozinha
                             </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-                {/* <View style={{ border: '2px solid #fff', width: '85%', margin: 'auto', marginTop: '20px', marginBottom: '10px', borderRadius: '2px' }}></View> */}
                 <FlatList
                     data={Produtos}
                     renderItem={renderCard}
                     keyExtractor={item => item.id}
-                    style={{ height: '100px', marginTop: '30px' }}
+                    style={{ height: 100, marginTop: 30 }}
                 />
             </View>
             <BottomBar/>
@@ -199,7 +198,7 @@ export default function Shopping() {
 
 const styles = StyleSheet.create({
     main: {
-        flex: '1',
+        flex: 1,
         backgroundColor: '#000',
     },
     container: {
@@ -209,29 +208,29 @@ const styles = StyleSheet.create({
     input: {
         backgroundColor: '#3A3A3A',
         width: '85%',
-        height: '60px',
-        borderRadius: '15px',
+        height: 60,
+        borderRadius: 15,
         color: '#838383',
-        paddingLeft: '16px',
-        fontSize: '17px',
+        paddingLeft: 16,
+        fontSize: 17,
         margin: 'auto',
-        marginTop: '15px',
+        marginTop: 15,
     },
     box: {
         width: '85%',
         margin: 'auto',
-        marginTop: '15px',
+        marginTop: 15,
     },
     child: {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: '10px',
+        marginTop: 10,
     },
     btn: {
-        width: '75px',
-        height: '65px',
-        borderRadius: '15px',
+        width: 75,
+        height: 65,
+        borderRadius: 15,
         alignItems: 'center',
         backgroundColor: '#3A3A3A',
     },

@@ -6,6 +6,7 @@ import SignIn from './src/pages/signin';
 import SignUp from './src/pages/signup';
 import Shopping from './src/pages/shopping';
 import Cart from './src/pages/cart';
+import User from './src/pages/user';
 
 import Vegetables from './src/pages/categories/vegetables';
 import Salads from './src/pages/categories/salads';
@@ -45,6 +46,11 @@ export default function Routers() {
                 <Pilha.Screen
                     name = 'Cart'
                     component={Cart}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name = 'User'
+                    component={User}
                     options={{ headerShown: false }}
                 />
 

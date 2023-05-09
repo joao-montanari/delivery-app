@@ -11,19 +11,19 @@ export default function Home(){
         <View style={styles.container}>
             <Image
                 source={require('../../assets/marca.png')}
-                style={{ width: '300px', height: '100px' }}
+                style={{ width: 300, height: 100 }}
             />
             <TouchableOpacity style={styles.btnsingin} onPress={() => { navigate.navigate(SignIn) }}>
-                <Text style={styles.textsingin}>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>
                     Sign in
                 </Text>
             </TouchableOpacity>
             <View style={styles.child}>
-                <Text style={{ color: 'white', fontSize: '17px' }}>
+                <Text style={{ color: 'white', fontSize: 17 }}>
                     Não tem uma conta?
                 </Text>
                 <TouchableOpacity style={styles.btnsingup} onPress={() => { navigate.navigate(SignUp) }} >
-                    <Text style={{ color: '#94DD26', fontSize: '18px', fontWeight: 'bold' }}>
+                    <Text style={{ color: '#94DD26', fontSize: 18, fontWeight: 'bold' }}>
                         Sign Up
                     </Text>
                 </TouchableOpacity>
@@ -34,7 +34,7 @@ export default function Home(){
 
 const styles = StyleSheet.create({
     container: {
-        flex: '1',
+        flex: 1,
         backgroundColor: "#181A20",
         alignItems: 'center',
         justifyContent: 'center',
@@ -42,22 +42,19 @@ const styles = StyleSheet.create({
     btnsingin: {
         backgroundColor: '#94DD26',
         width: '80%',
-        height: '45px',
-        textAlign: 'center',
-        borderRadius: '15px',
-        marginTop: '80px',
-        shadowColor: '#94DD26'
-    },
-    textsingin: {
-        margin: 'auto',
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: '18px',
+        height: 45,
+        borderRadius: 15,
+        marginTop: 80,
+        shadowColor: '#94DD26',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     child: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        width: '250px',
-        marginTop: '20px'
+        width: 250,
+        marginTop: 20,
+        //borderWidth : 1,
+        //borderColor: 'white',
     },
 })

@@ -9,13 +9,13 @@ export default function TopBar({ name, photo }) {
                 <View style={style.boxleft}>
                     <Image
                         source = {{ uri: photo }}
-                        style = {{ width: '50px', height: '50px' }}
+                        style = {{ width: 50, height: 50 }}
                     />
-                    <View style={{ marginLeft: '10px' }}>
-                        <Text style={{ color: '#94DD26', fontSize: '16px', fontWeight: 'bold' }}>
+                    <View style={{ marginLeft: 10 }}>
+                        <Text style={{ color: '#94DD26', fontSize: 16, fontWeight: 'bold' }}>
                             Usuário:
                         </Text>
-                        <Text style={{ color: '#fff', fontSize: '16px' }}>
+                        <Text style={{ color: '#fff', fontSize: 16 }}>
                             {name}
                         </Text>
                     </View>
@@ -24,13 +24,13 @@ export default function TopBar({ name, photo }) {
                     <TouchableOpacity style={style.btn}>
                         <Image
                             source={require('../../assets/icons/favorito.svg')} 
-                            style = {{ width: '30px', height: '30px', margin: 'auto' }}
+                            style = {{ width: 30, height: 30, margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={style.btn}>
                         <Image
                             source={require('../../assets/icons/carrinho.svg')} 
-                            style = {{ width: '30px', height: '30px', margin: 'auto' }}
+                            style = {{ width: 30, height: 30, margin: 'auto' }}
                         />
                     </TouchableOpacity>
                 </View>
@@ -41,7 +41,7 @@ export default function TopBar({ name, photo }) {
 
 const style = StyleSheet.create({
     container: {
-        flex: '0.1',
+        flex: 0.1,
         backgroundColor: '#181A20',
     },
     child: {
@@ -66,11 +66,12 @@ const style = StyleSheet.create({
         justifyContent: 'flex-end',
     },
     btn: {
-        border: '2px solid #fff',
-        width: '50px',
-        height: '50px',
+        borderWidth: 2,
+        borderColor: 'white',
+        width: 50,
+        height: 50,
         borderRadius: '50%',
-        marginLeft: '10px',
+        marginLeft: 10,
     },
 })
 

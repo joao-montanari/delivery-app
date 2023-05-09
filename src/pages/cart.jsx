@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity, FlatList } from "react-native";
 
 import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
@@ -69,10 +69,10 @@ export default function Cart() {
                     data={ProdCart}
                     renderItem={renderCard}
                     keyExtractor={item => item.id}
-                    style={{ width: '100%', margin: 'auto', height: '100px' }}
+                    style={{ width: '100%', margin: 'auto', height: 100 }}
                 />
                 <TouchableOpacity style={styles.btn}>
-                    <Text style={{ color: '#94DD26', fontWeight: '500', fontSize: '18px' }}>
+                    <Text style={{ color: '#94DD26', fontWeight: '500', fontSize: 18 }}>
                         Finalizar compra
                     </Text>
                 </TouchableOpacity>
@@ -84,7 +84,7 @@ export default function Cart() {
 
 const styles = StyleSheet.create({
     main : {
-        flex: '1',
+        flex: 1,
         backgroundColor: '#000',
     },
     container : {
@@ -93,13 +93,14 @@ const styles = StyleSheet.create({
     },
     btn: {
         width: '85%',
-        height: '50px',
-        border: '3px solid #94DD26',
-        borderRadius: '15px',
+        height: 50,
+        borderWidth: 3,
+        borderColor: '#94DD26',
+        borderRadius: 15,
         textAlign: 'center',
         justifyContent: 'center',
         margin: 'auto',
-        marginTop: '10px',
-        marginBottom: '20px',
+        marginTop: 10,
+        marginBottom: 20,
     }
 })

@@ -16,12 +16,12 @@ export default function SignIn() {
     return(
         <View style={styles.main}>
             <SimpleTopBar
-                page={'home'}
+                page={Home}
             />
             <View style={styles.container}>
                 <Image
                     source={require('../../assets/logo.png')}
-                    style={{ width: '130px', height: '130px' }}
+                    style={{ width: 130, height: 130 }}
                 />
                 <Text style={styles.sujestao}>
                     Entre na sua conta
@@ -38,8 +38,11 @@ export default function SignIn() {
                     value = {password}
                     placeholder = "Senha"
                 />
-                <TouchableOpacity style={styles.btnentrar} onPress={() => { navigate.navigate(Shopping) }}>
-                    <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: '18px', }}>
+                <TouchableOpacity 
+                    style={styles.btnentrar} 
+                    onPress={() => { navigate.navigate(Shopping) }}
+                >
+                    <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>
                         Entrar
                     </Text>
                 </TouchableOpacity>
@@ -50,19 +53,19 @@ export default function SignIn() {
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
                             source={require('../../assets/icons/google.svg')}
-                            style={{ width: '35px', height: '35px', margin: 'auto' }}
+                            style={{ width: 35, height: 35, margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
                             source={require('../../assets/icons/meta.svg')}
-                            style={{ width: '35px', height: '35px', margin: 'auto' }}
+                            style={{ width: 35, height: 35, margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
                         <Image
                             source={require('../../assets/icons/apple.svg')}
-                            style={{ width: '35px', height: '35px', margin: 'auto' }}
+                            style={{ width: 35, height: 35, margin: 'auto' }}
                         />
                     </TouchableOpacity>
                 </View>
@@ -73,7 +76,7 @@ export default function SignIn() {
 
 const styles = StyleSheet.create({
     main: {
-        flex: '1',
+        flex: 1,
         backgroundColor: "#000",
     },
     container: {
@@ -84,45 +87,45 @@ const styles = StyleSheet.create({
     },
     sujestao: {
         color: 'white',
-        fontSize: '30px',
+        fontSize: 30,
         fontWeight: 'light',
-        marginTop: '40px',
-        marginBottom: '30px'
+        marginTop: 40,
+        marginBottom: 30,
     },
     input: {
         backgroundColor: '#3A3A3A',
         width: '85%',
-        height: '50px',
-        borderRadius: '15px',
+        height: 40,
+        borderRadius: 15,
         color: 'white',
-        paddingLeft: '16px',
-        fontSize: '17px',
-        marginBottom: '20px',
+        paddingLeft: 16,
+        fontSize: 17,
+        marginBottom: 20,
     },
     btnentrar: {
         backgroundColor: '#94DD26',
         width: '85%',
-        height: '45px',
+        height: 45,
         textAlign: 'center',
-        borderRadius: '15px',
+        borderRadius: 15,
         shadowColor: '#94DD26',
-        marginTop: '50px'
+        marginTop: 50,
     },
     textopcoes: {
         color: 'white',
-        fontSize: '16px',
-        marginTop: '30px',
+        fontSize: 16,
+        marginTop: 30,
     },
     contas: {
         flexDirection: 'row',
         width: '85%',
         justifyContent: 'space-around',
-        marginTop: '15px',
+        marginTop: 15,
     },
     btnconta: {
-        width: '70px',
-        height: '60px',
-        borderRadius: '15px',
+        width: 70,
+        height: 60,
+        borderRadius: 15,
         backgroundColor: '#3A3A3A',
     },
 })
