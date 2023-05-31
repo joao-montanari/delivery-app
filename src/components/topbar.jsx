@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types'
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import Icon from 'react-native-vector-icons/Fontisto';
 
 export default function TopBar({ name, photo }) {
     return (
@@ -22,15 +23,19 @@ export default function TopBar({ name, photo }) {
                 </View>
                 <View style={style.boxright}>
                     <TouchableOpacity style={style.btn}>
-                        <Image
-                            source={require('../../assets/icons/favorito.svg')} 
-                            style = {{ width: 30, height: 30, margin: 'auto' }}
+                        <Icon
+                            name="favorite"
+                            size={25}
+                            color="#75F94C"
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={style.btn}>
-                        <Image
-                            source={require('../../assets/icons/carrinho.svg')} 
-                            style = {{ width: 30, height: 30, margin: 'auto' }}
+                        <Icon
+                            name="shopping-basket"
+                            size={25}
+                            color="#E6E6E6"
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                 </View>
@@ -68,6 +73,14 @@ const style = StyleSheet.create({
     btn: {
         borderWidth: 2,
         borderColor: 'white',
+        width: 50,
+        height: 50,
+        borderRadius: '50%',
+        marginLeft: 10,
+    },
+    btngreen: {
+        borderWidth: 2,
+        borderColor: '#75F94C',
         width: 50,
         height: 50,
         borderRadius: '50%',
