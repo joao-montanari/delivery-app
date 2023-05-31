@@ -20,6 +20,14 @@ export default function Buy() {
         { label: 'Débito', value: 2 }
     ]);
 
+    const [openAddress, setOpenAddress] = useState(false);
+    const [valueAddress, setValueAddress] = useState(null);
+    const [itemsAddress, setItemAddress] = useState([
+        { label: 'Rua Esquina', value: 0 },
+        { label: 'Rua João Batista', value: 1 },
+        { label: 'Rua Pq das Camélias', value: 2 }
+    ]);
+
     return (
         <View style={styles.main}>
             <StatusBar/>
@@ -97,6 +105,21 @@ export default function Buy() {
                         style={styles.dropdown}
                     />
                 </View>
+                <View style={styles.boxaddress}>
+                    <Text style={{ color: 'white', fontWeight: '600' }}>
+                        Endereço de entrega:
+                    </Text>
+                    <DropDownPicker
+                        open={openAddress}
+                        value={valueAddress}
+                        items={itemsAddress}
+                        setValue={setValueAddress}
+                        placeholder="Selecione"
+                        textStyle={{color:'white'}}
+                        theme="LIGHT"
+                        style={styles.dropdownaddress}
+                    />
+                </View>
             </View>
         </View>
     )
@@ -108,7 +131,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
     },
     container : {
-        flex: '0.9',
+        flex: 0.9,
         backgroundColor: '#181A20',
         justifyContent: 'center',
         alignItems: 'center'
@@ -128,5 +151,19 @@ const styles = StyleSheet.create({
         width: 120, 
         backgroundColor: '#3A3A3A', 
         borderColor: '#3A3A3A'
+    },
+    dropdownaddress : {
+        color: 'white', 
+        position: 'absolute', 
+        right: 100, 
+        width: '80%', 
+        backgroundColor: '#3A3A3A', 
+        borderColor: '#3A3A3A'
+    },
+    boxaddress : {
+        width: '80%',
+        borderColor: 'white',
+        borderWidth: 1,
+        margin: 'auto',
     },
 })
