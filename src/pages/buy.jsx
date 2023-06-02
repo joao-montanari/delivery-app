@@ -40,7 +40,7 @@ export default function Buy() {
                     name="shopping-store"
                     size={120}
                     color="#75F94C"
-                    style={{margin: 'auto'}}
+                    style={{ marginBottom: 70, marginTop: 50 }}
                 />
                 <View style={styles.box}>
                     <Icon
@@ -49,7 +49,7 @@ export default function Buy() {
                         size={22}
                         style={{ marginRight: 10 }}
                     />
-                    <Text style={{ color: 'white', fontWeight: '600' }}>
+                    <Text style={{ color: '#BCBCBC', fontWeight: '600' }}>
                         Valor total da compra:
                     </Text>
                     <Text style={{ color: 'white', position: 'absolute', right: 0 }}>
@@ -63,7 +63,7 @@ export default function Buy() {
                         size={22}
                         style={{ marginRight: 10 }}
                     />
-                    <Text style={{ color: 'white', fontWeight: '600' }}>
+                    <Text style={{ color: '#BCBCBC', fontWeight: '600' }}>
                         Nome do cliente:
                     </Text>
                     <Text style={{ color: 'white', position: 'absolute', right: 0 }}>
@@ -77,7 +77,7 @@ export default function Buy() {
                         size={22}
                         style={{ marginRight: 10 }}
                     />
-                    <Text style={{ color: 'white', fontWeight: '600' }}>
+                    <Text style={{ color: '#BCBCBC', fontWeight: '600' }}>
                         Data:
                     </Text>
                     <Text style={{ color: 'white', position: 'absolute', right: 0 }}>
@@ -91,7 +91,7 @@ export default function Buy() {
                         size={22}
                         style={{ marginRight: 10 }}
                     />
-                    <Text style={{ color: 'white', fontWeight: '600' }}>
+                    <Text style={{ color: '#BCBCBC', fontWeight: '600' }}>
                         Tipo de pagamento
                     </Text>
                     <DropDownPicker
@@ -117,6 +117,7 @@ export default function Buy() {
                         placeholder="Selecione"
                         textStyle={{color:'white'}}
                         theme="LIGHT"
+                        showArrowIcon={true}
                         style={styles.dropdownaddress}
                     />
                 </View>
@@ -129,16 +130,15 @@ const styles = StyleSheet.create({
     main : {
         flex: 1,
         backgroundColor: '#000',
+        alignItems: 'center'
     },
     container : {
         flex: 0.9,
         backgroundColor: '#181A20',
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%',
     },
     box : {
-        borderColor: 'white',
-        borderWidth: 1,
         flexDirection: 'row',
         width: '80%',
         position: 'relative',
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
     dropdown : {
         color: 'white', 
         position: 'absolute', 
-        right: 100, 
-        width: 120, 
+        right: 90,
+        width: 110,
         backgroundColor: '#3A3A3A', 
         borderColor: '#3A3A3A'
     },
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
         color: 'white', 
         position: 'absolute', 
         right: 100, 
-        width: '80%', 
+        width: '80%',
         backgroundColor: '#3A3A3A', 
         borderColor: '#3A3A3A'
     },
@@ -164,6 +164,5 @@ const styles = StyleSheet.create({
         width: '80%',
         borderColor: 'white',
         borderWidth: 1,
-        margin: 'auto',
     },
 })

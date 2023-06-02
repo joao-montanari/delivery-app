@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         flex: 0.1,
         flexDirection: 'row',
         alignItems: 'center',
+        width: '100%',
         backgroundColor: '#181A20',
     },
     title: {
