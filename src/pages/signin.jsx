@@ -2,6 +2,7 @@ import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "reac
 import { useNavigation } from '@react-navigation/native';
 import React from "react";
 import { useState } from "react";
+import Icon from "react-native-vector-icons/Fontisto";
 
 import Home from "./home";
 import Shopping from "./shopping";
@@ -53,21 +54,27 @@ export default function SignIn() {
                 </Text>
                 <View style={styles.contas}>
                     <TouchableOpacity style={styles.btnconta}>
-                        <Image
-                            source={require('../../assets/icons/google.svg')}
-                            style={{ width: 35, height: 35, margin: 'auto' }}
+                        <Icon
+                            name="google"
+                            size={35}
+                            color="#E24439"
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
-                        <Image
-                            source={require('../../assets/icons/meta.svg')}
-                            style={{ width: 35, height: 35, margin: 'auto' }}
+                        <Icon
+                            name="facebook"
+                            size={35}
+                            color="#0083FC"
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
-                        <Image
-                            source={require('../../assets/icons/apple.svg')}
-                            style={{ width: 35, height: 35, margin: 'auto' }}
+                        <Icon
+                            name="apple"
+                            size={35}
+                            color="gray"
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                 </View>

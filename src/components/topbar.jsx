@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/Fontisto';
+import Icon from 'react-native-vector-icons/Fontisto';
 
 export default function TopBar({ name, photo }) {
     return (
@@ -76,6 +77,26 @@ const style = StyleSheet.create({
     btn: {
         borderWidth: 2,
         borderColor: 'white',
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+        marginLeft: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btngreen: {
+        borderWidth: 2,
+        borderColor: '#94DD26',
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+        marginLeft: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btngreen: {
+        borderWidth: 2,
+        borderColor: '#75F94C',
         width: 50,
         height: 50,
         borderRadius: 50,
