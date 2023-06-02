@@ -1,12 +1,10 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import { View, StyleSheet, Text, TouchableOpacity, FlatList } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
 import CartCard from "../components/cartcard";
-import Buy from "./buy";
 import Buy from "./buy";
 
 export default function Cart() {
@@ -76,7 +74,6 @@ export default function Cart() {
                     keyExtractor={item => item.id}
                     style={{ width: '100%', margin: 'auto', height: 100 }}
                 />
-                <TouchableOpacity style={styles.btn} onPress={() => navigate.navigate(Buy)}>
                 <TouchableOpacity style={styles.btn} onPress={() => navigate.navigate(Buy)}>
                     <Text style={{ color: '#94DD26', fontWeight: '500', fontSize: 18 }}>
                         Finalizar compra

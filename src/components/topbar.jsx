@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/Fontisto';
-import Icon from 'react-native-vector-icons/Fontisto';
 
 export default function TopBar({ name, photo }) {
     return (

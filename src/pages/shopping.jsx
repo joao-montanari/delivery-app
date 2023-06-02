@@ -91,7 +91,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(ProductDatail, ) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/legume.svg')}
+                                source = {require('../../assets/icons/png/legume.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -103,7 +103,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Salads) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/salada.svg')}
+                                source = {require('../../assets/icons/png/salada.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -115,7 +115,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Fruits) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/fruta.svg')}
+                                source = {require('../../assets/icons/png/fruta.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -127,7 +127,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Sauces) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/molho.svg')}
+                                source = {require('../../assets/icons/png/molho.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -141,7 +141,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Fish) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/peixe.svg')}
+                                source = {require('../../assets/icons/png/peixe.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -153,7 +153,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Cultivation) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/agricultura.svg')}
+                                source = {require('../../assets/icons/png/cultivo.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -165,7 +165,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Plants) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/planta.svg')}
+                                source = {require('../../assets/icons/png/planta.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
@@ -177,7 +177,7 @@ export default function Shopping() {
                             onPress={() => { navigate.navigate(Kitchen) }}
                         >
                             <Image
-                                source = {require('../../assets/icons/cozinha.svg')}
+                                source = {require('../../assets/icons/png/cozinha.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
                             />
                             <Text style={{ color: '#BCBCBC', fontSize: 12, marginTop: 2 }}>
