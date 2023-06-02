@@ -7,7 +7,7 @@ export default function CartCard({ name, price, amount, image }) {
             <View style={{ width: '20%', minWidth: 60 }}>
                 <Image
                     source={{ uri: image }}
-                    style = {{ width: 60, height: 60, borderRadius: '50%' }}
+                    style = {{ width: 60, height: 60, borderRadius: 50 }}
                     alt="Imagem do produto"
                 />
             </View>
@@ -81,6 +81,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         right: 0,
         marginRight: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     line : {
         borderWidth: 3,

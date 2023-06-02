@@ -1,6 +1,7 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import Icon from 'react-native-vector-icons/Fontisto';
 
 export default function TopBar({ name, photo }) {
     return (
@@ -21,16 +22,20 @@ export default function TopBar({ name, photo }) {
                     </View>
                 </View>
                 <View style={style.boxright}>
-                    <TouchableOpacity style={style.btn}>
-                        <Image
-                            source={require('../../assets/icons/favorito.svg')} 
-                            style = {{ width: 30, height: 30, margin: 'auto' }}
+                    <TouchableOpacity style={style.btngreen}>
+                        <Icon
+                            name='favorite'
+                            size={27}
+                            color='#94DD26'
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={style.btn}>
-                        <Image
-                            source={require('../../assets/icons/carrinho.svg')} 
-                            style = {{ width: 30, height: 30, margin: 'auto' }}
+                        <Icon
+                            name='shopping-bag'
+                            size={25}
+                            color='white'
+                            style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
                 </View>
@@ -42,7 +47,10 @@ export default function TopBar({ name, photo }) {
 const style = StyleSheet.create({
     container: {
         flex: 0.1,
+        width: '100%',
         backgroundColor: '#181A20',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     child: {
         flexDirection: 'row',
@@ -70,8 +78,20 @@ const style = StyleSheet.create({
         borderColor: 'white',
         width: 50,
         height: 50,
-        borderRadius: '50%',
+        borderRadius: 50,
         marginLeft: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btngreen: {
+        borderWidth: 2,
+        borderColor: '#94DD26',
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+        marginLeft: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })
 

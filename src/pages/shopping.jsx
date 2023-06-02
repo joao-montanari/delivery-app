@@ -7,6 +7,8 @@ import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
 import Card from "../components/card";
 
+import ProductDatail from "./productdetail";
+
 import Vegetables from './categories/vegetables';
 import Salads from './categories/salads';
 import Fruits from "./categories/fruits";
@@ -86,7 +88,7 @@ export default function Shopping() {
                     <View style={styles.child}>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Vegetables) }}
+                            onPress={() => { navigate.navigate(ProductDatail, ) }}
                         >
                             <Image
                                 source = {require('../../assets/icons/legume.svg')}
@@ -188,7 +190,7 @@ export default function Shopping() {
                     data={Produtos}
                     renderItem={renderCard}
                     keyExtractor={item => item.id}
-                    style={{ height: 100, marginTop: 30 }}
+                    style={{ height: 100, marginTop: 30, width: '85%' }}
                 />
             </View>
             <BottomBar/>
@@ -199,10 +201,13 @@ export default function Shopping() {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        backgroundColor: '#000',
+        backgroundColor: '#181A20',
+        alignItems: 'center',
     },
     container: {
-        flex: '0.8',
+        flex: 0.8,
+        width: '100%',
+        alignItems: 'center',
         backgroundColor: '#181A20',
     },
     input: {
@@ -233,5 +238,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         alignItems: 'center',
         backgroundColor: '#3A3A3A',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })

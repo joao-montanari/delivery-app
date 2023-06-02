@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#000",
     },
     container : {
-        flex: '0.9',
+        flex: 0.9,
         backgroundColor: '#181A20',
     },
     btnimage : {
@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 'auto',
         marginTop: 30,
         marginBottom: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     pen : {
         position: 'absolute',
@@ -132,6 +134,8 @@ const styles = StyleSheet.create({
         borderColor: '#94DD26',
         borderRadius: 30,
         textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     btnsalvar: {
         backgroundColor: '#94DD26',
@@ -142,6 +146,8 @@ const styles = StyleSheet.create({
         shadowColor: '#94DD26',
         marginTop: 30,
         marginHorizontal : 'auto',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     btnlogout: {
         borderWidth: 3,
@@ -153,5 +159,7 @@ const styles = StyleSheet.create({
         shadowColor: '#94DD26',
         marginTop: 20,
         marginHorizontal : 'auto',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })

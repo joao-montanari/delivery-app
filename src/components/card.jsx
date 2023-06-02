@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
 
 export default function Card({ name, price, image, evaluation }) {
     return (
@@ -36,7 +36,7 @@ export default function Card({ name, price, image, evaluation }) {
                         </Text>
                         <Image
                             source={require('../../assets/icons/coracao.svg')}
-                            style={{ width: 20, height: 20, position: 'absolute', right: '0' }}
+                            style={{ width: 20, height: 20, position: 'absolute', right: 0 }}
                             alt="Icon coracao"
                         />
                     </View>
@@ -49,7 +49,7 @@ export default function Card({ name, price, image, evaluation }) {
 const styles = StyleSheet.create({
     main: {
         backgroundColor: '#22283A',
-        width: '85%',
+        width: '100%',
         height: 120,
         borderRadius: 30,
         margin: 'auto',

@@ -13,7 +13,10 @@ export default function Home(){
                 source={require('../../assets/marca.png')}
                 style={{ width: 300, height: 100 }}
             />
-            <TouchableOpacity style={styles.btnsingin} onPress={() => { navigate.navigate(SignIn) }}>
+            <TouchableOpacity 
+                style={styles.btnsingin} 
+                onPress={() => { navigate.navigate(SignIn) }}
+            >
                 <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>
                     Sign in
                 </Text>
@@ -22,7 +25,10 @@ export default function Home(){
                 <Text style={{ color: 'white', fontSize: 17 }}>
                     Não tem uma conta?
                 </Text>
-                <TouchableOpacity style={styles.btnsingup} onPress={() => { navigate.navigate(SignUp) }} >
+                <TouchableOpacity 
+                    style={styles.btnsingup} 
+                    onPress={() => { navigate.navigate(SignUp) }} 
+                >
                     <Text style={{ color: '#94DD26', fontSize: 18, fontWeight: 'bold' }}>
                         Sign Up
                     </Text>

@@ -7,6 +7,8 @@ import Home from "./home";
 import Shopping from "./shopping";
 import SimpleTopBar from "../components/simpletopbar";
 
+import AppleSvg from '../../assets/icons/apple.svg'
+
 export default function SignIn() {
     const navigate = useNavigation();
 
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#000",
     },
     container: {
-        flex: '0.90',
+        flex: 0.9,
         backgroundColor: "#181A20",
         alignItems: 'center',
         justifyContent: 'center',
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
         width: '85%',
         height: 40,
         borderRadius: 15,
-        color: 'white',
+        color: '#fff',
         paddingLeft: 16,
         fontSize: 17,
         marginBottom: 20,
@@ -110,6 +112,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         shadowColor: '#94DD26',
         marginTop: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     textopcoes: {
         color: 'white',
@@ -127,5 +131,7 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 15,
         backgroundColor: '#3A3A3A',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })

@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#181A20",
     },
     container: {
-        flex: '0.9',
+        flex: 0.9,
         backgroundColor: '#181A20',
         alignItems: 'center',
         justifyContent: 'center',
@@ -125,6 +125,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         shadowColor: '#94DD26',
         marginTop: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     textopcoes: {
         color: 'white',
@@ -142,5 +144,7 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 15,
         backgroundColor: '#3A3A3A',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })

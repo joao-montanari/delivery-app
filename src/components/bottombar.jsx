@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native"; 
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Shopping from "../pages/shopping";
 import Cart from "../pages/cart";
@@ -14,27 +15,31 @@ export default function BottomBar() {
             <View style={styles.container}>
                 <View style={styles.child}>
                     <TouchableOpacity onPress={() => {navigate.navigate(Shopping)}}>
-                        <Image
-                            source={require('../../assets/icons/home.svg')}
-                            style={styles.icons}
+                        <Icon
+                            name="home"
+                            size={32}
+                            color="#E6E6E6"
                         />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => {navigate.navigate(Cart)}}>
-                        <Image
-                            source={require('../../assets/icons/carrinho.svg')}
-                            style={styles.icons}
+                        <Icon
+                            name="store"
+                            size={32}
+                            color="#E6E6E6"
                         />
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <Image
-                            source={require('../../assets/icons/mapa.svg')}
-                            style={styles.icons}
+                        <Icon
+                            name="map"
+                            size={32}
+                            color="#E6E6E6"
                         />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => {navigate.navigate(User)}}>
-                        <Image
-                            source={require('../../assets/icons/user.svg')}
-                            style={styles.icons}
+                        <Icon
+                            name="user-alt"
+                            size={32}
+                            color="#E6E6E6"
                         />
                     </TouchableOpacity>
                 </View>
@@ -46,6 +51,7 @@ export default function BottomBar() {
 const styles = StyleSheet.create({
     main: {
         flex: 0.1,
+        width: '100%',
         backgroundColor: '#181A20',
     },
     container: {
@@ -54,12 +60,14 @@ const styles = StyleSheet.create({
         height: '100%',
         borderTopRightRadius: 25,
         borderTopLeftRadius: 25,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     child: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '85%',
-        margin: 'auto'
+        margin: 'auto',
     },
     icons: {
         width: 40,
