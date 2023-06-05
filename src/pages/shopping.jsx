@@ -80,6 +80,7 @@ export default function Shopping() {
                     onChangeText={() => {onChangePesquisa(pesquisa)}}
                     value={pesquisa}
                     placeholder="O que você está procurando?"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <View style={styles.box}>
                     <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 25, marginBottom: 5 }}>

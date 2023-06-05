@@ -2,11 +2,14 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
+import Icon from 'react-native-vector-icons/EvilIcons'
 
 import SimpleTopBar from '../components/simpletopbar';
 import Shopping from './shopping';
+import Home from './home';
 
 export default function User() {
+    const navigate = useNavigation();
     const [name, setName] = useState('');
     const [nascimento, setNascimento] = useState('');
     const [email, setEmail] = useState('');
@@ -23,7 +26,7 @@ export default function User() {
                 title={'Seu Perfil'}
             />
             <View style={styles.container}>
-                <TouchableOpacity style={styles.btnimage}>
+                {/* <TouchableOpacity style={styles.btnimage}>
                     <Image
                         source={require('../../assets/icons/userimg.svg')}
                         style={{ width: 130, height: 130 }}
@@ -32,30 +35,40 @@ export default function User() {
                         source={require('../../assets/icons/greenpen.svg')}
                         style={styles.pen}
                     />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+                <Icon
+                    name='user'
+                    size={180}
+                    color='white'
+                    style={{ marginBottom: 20, marginTop: 20 }}
+                />
                 <TextInput
                     style={styles.input}
                     onChangeText={setName}
                     value={name}
                     placeholder="Nome"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style={styles.input}
                     onChangeText={setNascimento}
                     value={nascimento}
                     placeholder="Data de nascimento"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style={styles.input}
                     onChangeText={setEmail}
                     value={email}
                     placeholder="E-mail"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style={styles.input}
                     onChangeText={setCpf}
                     value={cpf}
                     placeholder="CPF"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <View style={styles.btns}>
                     <TouchableOpacity style={styles.btnopc}>
@@ -74,7 +87,7 @@ export default function User() {
                         Salvar
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnlogout} >
+                <TouchableOpacity style={styles.btnlogout} onPress={() => navigate.navigate(Home)}>
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: '500', fontSize: 16, }}>
                         Logout
                     </Text>
@@ -92,29 +105,29 @@ const styles = StyleSheet.create({
     container : {
         flex: 0.9,
         backgroundColor: '#181A20',
-    },
-    btnimage : {
-        position: 'relative',
-        width: 130,
-        marginHorizontal: 'auto',
-        marginTop: 30,
-        marginBottom: 30,
-        justifyContent: 'center',
         alignItems: 'center',
     },
-    pen : {
-        position: 'absolute',
-        width: 35,
-        height: 35,
-        bottom: 0,
-        right: 0,
-    },
+    // btnimage : {
+    //     position: 'relative',
+    //     width: 130,
+    //     marginHorizontal: 'auto',
+    //     marginTop: 30,
+    //     marginBottom: 30,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    // },
+    // pen : {
+    //     position: 'absolute',
+    //     width: 35,
+    //     height: 35,
+    //     bottom: 0,
+    //     right: 0,
+    // },
     input : {
         backgroundColor: '#3A3A3A',
         width: '85%',
         height: 50,
         borderRadius: 15,
-        color: 'white',
         paddingLeft: 16,
         fontSize: 17,
         marginHorizontal: 'auto',

@@ -12,42 +12,70 @@ export default function Cart() {
 
     const ProdCart = [
         {
-            id : '1',
+            id : 1,
             name : 'Arroz Integral',
             price : 15.01,
             amount : 2,
             image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
         },
         {
-            id : '2',
+            id : 2,
             name : 'Arroz Integral',
             price : 15.01,
             amount : 2,
             image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
         },
         {
-            id : '3',
+            id : 3,
             name : 'Arroz Integral',
             price : 15.01,
             amount : 2,
             image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
         },
         {
-            id : '4',
+            id : 4,
             name : 'Arroz Integral',
             price : 15.01,
             amount : 2,
             image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
         },
         {
-            id : '5',
+            id : 5,
             name : 'Arroz Integral',
             price : 15.01,
             amount : 2,
             image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
         },
         {
-            id : '6',
+            id : 6,
+            name : 'Arroz Integral',
+            price : 15.01,
+            amount : 2,
+            image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
+        },
+        {
+            id : 7,
+            name : 'Arroz Integral',
+            price : 15.01,
+            amount : 2,
+            image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
+        },
+        {
+            id : 8,
+            name : 'Arroz Integral',
+            price : 15.01,
+            amount : 2,
+            image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
+        },
+        {
+            id : 9,
+            name : 'Arroz Integral',
+            price : 15.01,
+            amount : 2,
+            image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
+        },
+        {
+            id : 10,
             name : 'Arroz Integral',
             price : 15.01,
             amount : 2,
@@ -68,12 +96,14 @@ export default function Cart() {
         <View style={styles.main}>
             <TopBar/>
             <View style={styles.container}>
-                <FlatList
-                    data={ProdCart}
-                    renderItem={renderCard}
-                    keyExtractor={item => item.id}
-                    style={{ width: '100%', margin: 'auto', height: 100 }}
-                />
+                <View style={{ alignItems: 'center', width: '85%', height: '89%' }} >
+                    <FlatList
+                        data={ProdCart}
+                        renderItem={renderCard}
+                        keyExtractor={item => item.id}
+                        style={{ width: '100%', margin: 'auto', height: 100}}
+                    />
+                </View>
                 <TouchableOpacity style={styles.btn} onPress={() => navigate.navigate(Buy)}>
                     <Text style={{ color: '#94DD26', fontWeight: '500', fontSize: 18 }}>
                         Finalizar compra
@@ -93,6 +123,7 @@ const styles = StyleSheet.create({
     container : {
         flex: 0.8,
         backgroundColor: '#181A20',
+        alignItems: 'center',
     },
     btn: {
         width: '85%',

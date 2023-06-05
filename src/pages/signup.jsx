@@ -38,24 +38,28 @@ export default function SignUp() {
                     onChangeText = {onChangeEmail}
                     value = {email}
                     placeholder = "E-mail"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
                     onChangeText = {onChangeNome}
                     value = {nome}
                     placeholder = "Nome"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
                     onChangeText = {onChangePassword}
                     value = {password}
                     placeholder = "Senha"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
                     onChangeText = {onChangeConfpassword}
                     value = {confpassword}
                     placeholder = "Confirme a senha"
+                    placeholderTextColor='#A9A9A9'
                 />
                 <TouchableOpacity style={styles.btncadastrar} onPress={() => { navigate.navigate(Shopping)}} >
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>

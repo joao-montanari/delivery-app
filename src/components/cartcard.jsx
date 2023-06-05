@@ -47,7 +47,7 @@ export default function CartCard({ name, price, amount, image }) {
 
 const styles = StyleSheet.create({
     container : {
-        width: '85%',
+        width: '100%',
         flexDirection: 'row',
         marginTop: 20,
         paddingBottom: 8,
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     },
     amount : {
         backgroundColor: '#3A3A3A',
+        alignItems: 'center',
         justifyContent: 'center',
         marginTop: 3,
         borderRadius: 10,
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     },
     btn: {
         width: 30,
-        height: '100%',
+        // height: '100%',
         justifyContent: 'center',
         right: 0,
         marginRight: 15,
