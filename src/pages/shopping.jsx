@@ -2,12 +2,13 @@ import React from "react";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
+import { SafeAreaView } from "react-native";
 
 import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
 import Card from "../components/card";
 
-import ProductDatail from "./productdetail";
+import ProductDetail from "./productdetail";
 
 import Vegetables from './categories/vegetables';
 import Salads from './categories/salads';
@@ -29,6 +30,8 @@ export default function Shopping() {
             evaluation : '4.0',
             price : 20.01,
             image : 'https://hidrogood.com.br/wp-content/uploads/2019/08/DSC03564-scaled.jpg',
+            supplier: 'Casas Bahia', 
+            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
         },
         {
             id : '2',
@@ -36,6 +39,8 @@ export default function Shopping() {
             evaluation : '4.3',
             price : 30.01,
             image : 'https://conteudo.imguol.com.br/c/entretenimento/f3/2021/07/30/coco-1627655478157_v2_3x4.jpg',
+            supplier: 'Casas Bahia', 
+            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
         },
         {
             id : '3',
@@ -43,6 +48,8 @@ export default function Shopping() {
             evaluation : '3.0',
             price : 15.01,
             image : 'https://images.tcdn.com.br/img/img_prod/691079/arroz_integral_73_1_48a95a6e62ee83d9a1793bef5baaa0e5.jpg',
+            supplier: 'Casas Bahia', 
+            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
         },
         {
             id : '4',
@@ -50,6 +57,8 @@ export default function Shopping() {
             evaluation : '3.8',
             price : 10.01,
             image : 'https://static.itdg.com.br/images/auto-auto/b2c52382f3b05766792fb9d4f2326e93/shutterstock-287797673.jpg',
+            supplier: 'Casas Bahia', 
+            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
         },
         {
             id : '5',
@@ -57,19 +66,42 @@ export default function Shopping() {
             evaluation : '4.9',
             price : 65.01,
             image : 'https://st4.depositphotos.com/1020804/29022/i/600/depositphotos_290225834-stock-photo-fresh-salmon-fillets-on-black.jpg',
+            supplier: 'Casas Bahia', 
+            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
         },
     ]
     
     const [pesquisa, onChangePesquisa] = useState();
 
     const renderCard = ({ item }) => (
-        <Card
-            name = {item.name}
-            evaluation = {item.evaluation}
-            price = {item.price}
-            image = {item.image}
-        />
+        <TouchableOpacity onPress={() => { 
+            navigate.navigate('ProductDetail', 
+                { 
+                    id: item.id, 
+                    nome: item.name, 
+                    avaliacao: item.evaluation, 
+                    preco: item.price, 
+                    fornecedor: item.supplier, 
+                    descricao: item.description,
+                    imagem: item.image
+                }
+            ) }}
+        >
+            <Card
+                name = {item.name}
+                evaluation = {item.evaluation}
+                price = {item.price}
+                image = {item.image}
+            />
+        </TouchableOpacity>
     );
+
+    const id = 1;
+    const nome = 'pepino';
+    const product = {
+        name : 'joao montanari',
+        id : 1
+    }
     
     return (
         <View style={styles.main}>
@@ -87,10 +119,7 @@ export default function Shopping() {
                         Categorias:
                     </Text>
                     <View style={styles.child}>
-                        <TouchableOpacity 
-                            style={styles.btn}
-                            onPress={() => { navigate.navigate(ProductDatail, ) }}
-                        >
+                        <TouchableOpacity style={styles.btn} >
                             <Image
                                 source = {require('../../assets/icons/png/legume.png')}
                                 style = {{ width: 35, height: 35, marginTop: 5 }}
@@ -216,7 +245,7 @@ const styles = StyleSheet.create({
         width: '85%',
         height: 60,
         borderRadius: 15,
-        color: '#838383',
+        color: '#fff',
         paddingLeft: 16,
         fontSize: 17,
         margin: 'auto',
