@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/EvilIcons'
 import SimpleTopBar from '../components/simpletopbar';
 import Shopping from './shopping';
 import Home from './home';
+import Password from "./password";
+import Address from "./address";
 
 export default function User() {
     const navigate = useNavigation();
@@ -71,12 +73,12 @@ export default function User() {
                     placeholderTextColor='#A9A9A9'
                 />
                 <View style={styles.btns}>
-                    <TouchableOpacity style={styles.btnopc}>
+                    <TouchableOpacity style={styles.btnopc} onPress={() => navigate.navigate(Password) }>
                         <Text style={{ color: '#94DD26', margin: 'auto', fontSize: 20, fontWeight: '500' }}>
                             Senha
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btnopc}>
+                    <TouchableOpacity style={styles.btnopc} onPress={() => navigate.navigate(Address)}>
                         <Text style={{ color: '#94DD26', margin: 'auto', fontSize: 20, fontWeight: '500' }}>
                             Endereços
                         </Text>
@@ -107,22 +109,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#181A20',
         alignItems: 'center',
     },
-    // btnimage : {
-    //     position: 'relative',
-    //     width: 130,
-    //     marginHorizontal: 'auto',
-    //     marginTop: 30,
-    //     marginBottom: 30,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    // },
-    // pen : {
-    //     position: 'absolute',
-    //     width: 35,
-    //     height: 35,
-    //     bottom: 0,
-    //     right: 0,
-    // },
     input : {
         backgroundColor: '#3A3A3A',
         width: '85%',
@@ -132,6 +118,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         marginHorizontal: 'auto',
         marginTop: 20,
+        color: 'white'
     },
     btns : {
         width: '85%',
