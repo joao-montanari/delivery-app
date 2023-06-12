@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useRoute } from "@react-navigation/native";
-import Icon from 'react-native-vector-icons/FontAwesome5'
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import SimpleTopBar from "../components/simpletopbar";
 import Shopping from "./shopping";
@@ -19,12 +19,24 @@ export default function ProductDetail() {
         imagem
     } = route.params;
 
+    const [quantidade, setQuantidade] = useState(1);
+
+    const subtrai = () => {
+        if (quantidade > 1) {
+            setQuantidade(quantidade - 1);
+        }
+    }
+
     return (
         <View style={styles.main}>
             <SimpleTopBar
                 page={Shopping}
             />
             <View style={styles.container}>
+                {/* <Image
+                    source={{ uri: imagem }}
+                    style={{ width: '100%', height: 200 }}
+                /> */}
                 <View style={styles.child}>
                     <Text style={styles.title}>
                         {nome}
@@ -59,13 +71,42 @@ export default function ProductDetail() {
                             Fornecedor: {fornecedor}
                         </Text>
                     </View>
-                    <View style={{ borderColor: '#fff', borderWidth: 1, paddingLeft: 16 }}>
+                    <View style={{ paddingLeft: 16, paddingRight: 16, height: 140 }}>
                         <Text style={{ fontSize: 22, fontWeight: '600', color: '#fff', marginTop: 16 }}>
                             Descrição:
                         </Text>
-                        <Text style={{ color: '#fff', fontSize: 16, marginTop: 8 }}>
+                        <Text style={{ color: '#fff', fontSize: 14, marginTop: 5, textAlign: 'justify' }} numberOfLines={4}>
                             {descricacao}
                         </Text>
+                    </View>
+                    <View style={{ alignItems: 'center', marginTop: 10 }}>
+                        <Text style={{ color: '#fff', fontWeight: '600', fontSize: 18 }}>
+                            Quantidade:
+                        </Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 25, width: 250, justifyContent: 'space-between' }}>
+                            <TouchableOpacity style={styles.btnquant} onPress={() => {setQuantidade(quantidade + 1)}}>
+                                <Icon
+                                    name="plus"
+                                    color="#75F94C"
+                                    size={35}
+                                />
+                            </TouchableOpacity>
+                            <Text style={{ color: '#fff', fontWeight: '600', fontSize: 40 }}>
+                                {quantidade}
+                            </Text>
+                            <TouchableOpacity style={styles.btnquant} onPress={() => subtrai()}>
+                                <Icon
+                                    name="minus"
+                                    color="#75F94C"
+                                    size={35}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <TouchableOpacity style={styles.btn}>
+                            <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>
+                                Adicionar ao carrinho
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -85,8 +126,6 @@ const styles = StyleSheet.create({
     },
     child: {
         width: '85%',
-        // borderColor: '#fff',
-        // borderWidth: 1,
     },
     title: {
         color: '#fff',
@@ -104,5 +143,25 @@ const styles = StyleSheet.create({
         paddingBottom: 8,
         marginTop: 12,
         paddingLeft: 20,
+        alignItems: 'center',
+    },
+    btnquant: { 
+        borderColor: '#BCBCBC', 
+        borderWidth: 2, 
+        borderRadius: 14, 
+        paddingHorizontal: 10, 
+        paddingVertical: 5, 
+    },
+    btn: {
+        backgroundColor: '#94DD26',
+        width: '100%',
+        height: 50,
+        textAlign: 'center',
+        borderRadius: 15,
+        shadowColor: '#94DD26',
+        marginTop: 30,
+        marginHorizontal : 'auto',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })

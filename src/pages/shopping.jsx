@@ -67,7 +67,7 @@ export default function Shopping() {
             price : 65.01,
             image : 'https://st4.depositphotos.com/1020804/29022/i/600/depositphotos_290225834-stock-photo-fresh-salmon-fillets-on-black.jpg',
             supplier: 'Casas Bahia', 
-            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
+            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
         },
     ]
     
@@ -82,7 +82,7 @@ export default function Shopping() {
                     avaliacao: item.evaluation, 
                     preco: item.price, 
                     fornecedor: item.supplier, 
-                    descricao: item.description,
+                    descricacao: item.description,
                     imagem: item.image
                 }
             ) }}
