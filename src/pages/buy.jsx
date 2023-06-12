@@ -1,36 +1,130 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
+import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList, SafeAreaView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Icon from 'react-native-vector-icons/Fontisto';
-import DropDownPicker from "react-native-dropdown-picker";
+// import DropDownPicker from "react-native-dropdown-picker";
 
 import SimpleTopBar from "../components/simpletopbar";
 import Cart from "./cart";
+import Select from "../components/select";
 
 export default function Buy() {
     const navigate = useNavigation();
     
     const [openDropDown, setOpenDropDown] = useState(false);
     const [valueDropDown, setValueDropDown] = useState(null);
-    const [itemsDropDown, setItemsDropDown] = useState([
-        { label: 'Boleto', value: 0 },
-        { label: 'Crédito', value: 1 },
-        { label: 'Débito', value: 2 }
-    ]);
 
-    const [openAddress, setOpenAddress] = useState(false);
-    const [valueAddress, setValueAddress] = useState(null);
-    const [itemsAddress, setItemAddress] = useState([
-        { label: 'Rua Esquina', value: 0 },
-        { label: 'Rua João Batista', value: 1 },
-        { label: 'Rua Pq das Camélias', value: 2 }
-    ]);
+    const enderecos = [
+        {
+            id : 1,
+            rua : 'Rodolfo Favalli',
+            bairro : 'Pq das Camelias',
+            numero : '05',
+            complemento : 'casa',
+            pais : 'Brasil',
+            uf : 'SP',
+            cep : '098234234',
+            usuario : {
+                id : 1
+            }
+        },
+        {
+            id : 2,
+            rua : 'Arnaldo Cessar',
+            bairro : 'Pq das Flores',
+            numero : '09',
+            complemento : 'predio',
+            pais : 'Brasil',
+            uf : 'SP',
+            cep : '080934234',
+            usuario : {
+                id : 3
+            }
+        },
+        {
+            id : 3,
+            rua : 'Joaquim Pereira',
+            bairro : 'Pq João Jorge',
+            numero : '13',
+            complemento : 'casa',
+            pais : 'Brasil',
+            uf : 'SP',
+            cep : '888999333',
+            usuario : {
+                id : 2
+            }
+        },
+        // {
+        //     id : 4,
+        //     rua : 'Joaquim Pereira',
+        //     bairro : 'Pq João Envilhe',
+        //     numero : '13',
+        //     complemento : 'casa',
+        //     pais : 'Brasil',
+        //     uf : 'SP',
+        //     cep : '888999333',
+        //     usuario : {
+        //         id : 2
+        //     }
+        // },
+        // {
+        //     id : 5,
+        //     rua : 'Joaquim Pereira',
+        //     bairro : 'Pq João Envilhe',
+        //     numero : '13',
+        //     complemento : 'casa',
+        //     pais : 'Brasil',
+        //     uf : 'SP',
+        //     cep : '888999333',
+        //     usuario : {
+        //         id : 2
+        //     }
+        // },
+        // {
+        //     id : 6,
+        //     rua : 'Joaquim Pereira',
+        //     bairro : 'Pq João Envilhe',
+        //     numero : '13',
+        //     complemento : 'casa',
+        //     pais : 'Brasil',
+        //     uf : 'SP',
+        //     cep : '888999333',
+        //     usuario : {
+        //         id : 2
+        //     }
+        // },
+        // {
+        //     id : 7,
+        //     rua : 'Joaquim Pereira',
+        //     bairro : 'Pq João Envilhe',
+        //     numero : '13',
+        //     complemento : 'casa',
+        //     pais : 'Brasil',
+        //     uf : 'SP',
+        //     cep : '888999333',
+        //     usuario : {
+        //         id : 2
+        //     }
+        // },
+        // {
+        //     id : 8,
+        //     rua : 'Joaquim Pereira',
+        //     bairro : 'Pq João Envilhe',
+        //     numero : '13',
+        //     complemento : 'casa',
+        //     pais : 'Brasil',
+        //     uf : 'SP',
+        //     cep : '888999333',
+        //     usuario : {
+        //         id : 2
+        //     }
+        // },
+    ]
 
     return (
         <View style={styles.main}>
-            <StatusBar/>
             <SimpleTopBar
                 page={Cart}
                 title={'Sua compra'}
@@ -94,33 +188,23 @@ export default function Buy() {
                     <Text style={{ color: '#BCBCBC', fontWeight: '600' }}>
                         Tipo de pagamento
                     </Text>
-                    <DropDownPicker
-                        open={openDropDown}
-                        value={valueDropDown}
-                        items={itemsDropDown}
-                        setValue={setValueDropDown}
-                        placeholder="Selecione"
-                        textStyle={{color:'white'}}
-                        theme="LIGHT"
-                        style={styles.dropdown}
-                    />
                 </View>
                 <View style={styles.boxaddress}>
-                    <Text style={{ color: 'white', fontWeight: '600' }}>
+                    <Text style={{ color: 'white', fontWeight: '600', marginBottom: 10 }}>
                         Endereço de entrega:
                     </Text>
-                    <DropDownPicker
-                        open={openAddress}
-                        value={valueAddress}
-                        items={itemsAddress}
-                        setValue={setValueAddress}
-                        placeholder="Selecione"
-                        textStyle={{color:'white'}}
-                        theme="LIGHT"
-                        showArrowIcon={true}
-                        style={styles.dropdownaddress}
+                    <Select
+                        options = {enderecos}
+                        onChangeSelect = {(id) => console.log(id)}
+                        ruadefault={'Selecione'}
+                        bairrodefault={'um endereço'}
                     />
                 </View>
+                <TouchableOpacity style={styles.btn}>
+                    <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>
+                        Confirmar dados da compra
+                    </Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -144,25 +228,20 @@ const styles = StyleSheet.create({
         position: 'relative',
         marginBottom: 35,
     },
-    dropdown : {
-        color: 'white', 
-        position: 'absolute', 
-        right: 90,
-        width: 110,
-        backgroundColor: '#3A3A3A', 
-        borderColor: '#3A3A3A'
-    },
-    dropdownaddress : {
-        color: 'white', 
-        position: 'absolute', 
-        right: 100, 
-        width: '80%',
-        backgroundColor: '#3A3A3A', 
-        borderColor: '#3A3A3A'
-    },
     boxaddress : {
-        width: '80%',
-        borderColor: 'white',
-        borderWidth: 1,
+        width: '85%',
+        marginTop: 15
+    },
+    btn: {
+        backgroundColor: '#94DD26',
+        width: '85%',
+        height: 50,
+        textAlign: 'center',
+        borderRadius: 15,
+        shadowColor: '#94DD26',
+        marginTop: 60,
+        marginHorizontal : 'auto',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })
