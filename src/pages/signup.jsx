@@ -52,6 +52,7 @@ export default function SignUp() {
                     onChangeText = {onChangePassword}
                     value = {password}
                     placeholder = "Senha"
+                    secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
@@ -59,6 +60,7 @@ export default function SignUp() {
                     onChangeText = {onChangeConfpassword}
                     value = {confpassword}
                     placeholder = "Confirme a senha"
+                    secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
                 <TouchableOpacity style={styles.btncadastrar} onPress={() => { navigate.navigate(Shopping)}} >
@@ -71,19 +73,15 @@ export default function SignUp() {
                 </Text>
                 <View style={styles.contas}>
                     <TouchableOpacity style={styles.btnconta}>
-                        <Icon
-                            name="google"
-                            size={35}
-                            color="#E24439"
-                            style={{ margin: 'auto' }}
+                        <Image
+                            source={require('../../assets/google.png')}
+                            style={{ width: 35, height: 35 }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>
-                        <Icon
-                            name="facebook"
-                            size={35}
-                            color="#0083FC"
-                            style={{ margin: 'auto' }}
+                        <Image
+                            source={require('../../assets/meta.png')}
+                            style={{ width: 37, height: 25 }}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btnconta}>

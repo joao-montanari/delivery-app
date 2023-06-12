@@ -2,8 +2,13 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/Fontisto';
+import { useNavigation } from '@react-navigation/native';
+
+import Cart from "../pages/cart";
 
 export default function TopBar({ name, photo }) {
+    const navigate = useNavigation();
+
     return (
         <View style={style.container}>
             <View style={style.child}>
@@ -30,7 +35,7 @@ export default function TopBar({ name, photo }) {
                             style={{ margin: 'auto' }}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity style={style.btn}>
+                    <TouchableOpacity style={style.btn} onPress={() => navigate.navigate(Cart)}>
                         <Icon
                             name='shopping-bag'
                             size={25}

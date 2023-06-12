@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function SimpleTopBar({ page, title }) {

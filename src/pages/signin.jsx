@@ -39,6 +39,7 @@ export default function SignIn() {
                     onChangeText = {onChangePassword}
                     value = {password}
                     placeholder = "Senha"
+                    secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
                 <TouchableOpacity 
