@@ -8,6 +8,10 @@ import Shopping from './src/pages/shopping';
 import Cart from './src/pages/cart';
 import User from './src/pages/user';
 import Buy from './src/pages/buy';
+import Password from './src/pages/password';
+import Address from './src/pages/address';
+import AddAddress from './src/pages/addaddress';
+import ProductDetail from './src/pages/productdetail';
 
 import Vegetables from './src/pages/categories/vegetables';
 import Salads from './src/pages/categories/salads';
@@ -57,6 +61,26 @@ export default function Routers() {
                 <Pilha.Screen
                     name = 'Buy'
                     component={Buy}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name = 'Password'
+                    component={Password}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name="Address"
+                    component={Address}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name="AddAddress"
+                    component={AddAddress}
+                    options={{ headerShown: false }}
+                />
+                <Pilha.Screen
+                    name="ProductDetail"
+                    component={ProductDetail}
                     options={{ headerShown: false }}
                 />
 
