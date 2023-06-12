@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
 export default function CartCard({ name, price, amount, image }) {
     return (
@@ -17,10 +18,11 @@ export default function CartCard({ name, price, amount, image }) {
                         {name}
                     </Text>
                     <View style={styles.box}>
-                        <Image
-                            source={require('../../assets/icons/money.svg')}
-                            style={{ width: 20, height: 20, marginRight: 5 }}
-                            alt="Icon preco"
+                        <Icon
+                            name="money-bill-wave"
+                            size={18}
+                            color="#75F94C"
+                            style={{ marginRight: 10 }}
                         />
                         <Text style={{ color: 'white', fontSize: 16, fontWeight: '400' }}>
                             {price}

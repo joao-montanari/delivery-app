@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text, Image } from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
 export default function Card({ name, price, image, evaluation }) {
     return (
@@ -12,32 +13,35 @@ export default function Card({ name, price, image, evaluation }) {
                     />
                 </View>
                 <View style={styles.child}>
-                    <Text style={styles.title}>
+                    <Text style={styles.title} numberOfLines={1}>
                         {name}
                     </Text>
                     <View style={styles.box}>
                         <Text style={{ color: 'white' }}>
                             Avaliação: {evaluation}
                         </Text>
-                        <Image
-                            source={require('../../assets/icons/estrela.svg')}
-                            style={{ width: 15, height: 15, marginLeft: 8 }}
-                            alt="Estrelas"
+                        <Icon
+                            name="star"
+                            size={15}
+                            color="#faba32"
+                            style={{ marginLeft: 8 }}
                         />
                     </View>
                     <View style={styles.box}>
-                        <Image
-                            source={require('../../assets/icons/money.svg')}
-                            style={{ width: 20, height: 20, marginRight: 5 }}
-                            alt="Icon preco"
+                        <Icon
+                            name="money-bill-wave"
+                            size={18}
+                            color="#75F94C"
+                            style={{ marginRight: 10 }}
                         />
                         <Text style={{ color: 'white', fontSize: 16, fontWeight: '400' }}>
                             {price}
                         </Text>
-                        <Image
-                            source={require('../../assets/icons/coracao.svg')}
-                            style={{ width: 20, height: 20, position: 'absolute', right: 0 }}
-                            alt="Icon coracao"
+                        <Icon
+                            name="heart"
+                            size={20}
+                            color="#b11623"
+                            style={{ position: 'absolute', right: 0 }}
                         />
                     </View>
                 </View>
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
     title: {
         color: 'white',
         fontWeight: '500',
-        fontSize: 16,
+        fontSize: 17,
     },
     box: {
         flexDirection: 'row',
