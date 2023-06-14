@@ -15,20 +15,33 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.joaomontanari.deliveryapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.joaomontanari.deliveryapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "packagerOpts": {
-      "config" : "metro.config.js",
-      "sourceExts" : ["js", "jsx", "ts", "tsx", "svg"]
+      "config": "metro.config.js",
+      "sourceExts": [
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "svg"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "deb71c79-6208-4241-bb54-77f387b523b1"
+      }
     }
   }
 }

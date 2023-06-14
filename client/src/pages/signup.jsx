@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
-import Icon from 'react-native-vector-icons/Fontisto'
+import Icon from 'react-native-vector-icons/Fontisto';
+
+import { auth } from '../config/firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import Home from "./home";
 import Shopping from "./shopping";
@@ -16,9 +19,18 @@ export default function SignUp() {
     const [password, onChangePassword] = useState();
     const [confpassword, onChangeConfpassword] = useState();
 
-    function Cadastro() {
-        navigate.navigate(Shopping);
-    }
+    useEffect(() => {
+        createUserWithEmailAndPassword(auth, "teste@email.com", "teste123")
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(userCredential)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(error);
+        });
+    }, [])
 
     return(
         <View style = {styles.main}>
