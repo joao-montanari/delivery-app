@@ -8,39 +8,38 @@ export default function CartCard({ name, price, amount, image }) {
             <View style={{ width: '20%', minWidth: 60 }}>
                 <Image
                     source={{ uri: image }}
-                    style = {{ width: 60, height: 60, borderRadius: 50 }}
+                    style = {{ width: 55, height: 55, borderRadius: 50, margin: 5 }}
                     alt="Imagem do produto"
                 />
             </View>
             <View style={styles.child}>
                 <View>
-                    <Text style={{ color: '#fff', fontWeight: '500', fontSize: 16 }}>
+                    <Text style={{ fontSize: 18, fontWeight: '600', color: '#fff' }}>
                         {name}
                     </Text>
-                    <View style={styles.box}>
+                    <View style={{ flexDirection: 'row', marginTop: 5 }}> 
                         <Icon
                             name="money-bill-wave"
-                            size={18}
+                            size={15}
                             color="#75F94C"
-                            style={{ marginRight: 10 }}
+                            style={{ marginRight: 10, marginTop: 3 }}
                         />
-                        <Text style={{ color: 'white', fontSize: 16, fontWeight: '400' }}>
-                            {price}
+                        <Text style={{ color: '#fff', fontWeight: '400' }}>
+                            R$: {price}
                         </Text>
                     </View>
                 </View>
                 <View style={styles.quant}>
-                    <Text style={{ color: '#fff', fontSize: 12 }}>
-                        quant
+                    <Text style={{ color: '#fff', fontWeight: '600', fontSize: 18 }}>
+                        {amount}
                     </Text>
-                    <View style={styles.amount}>
-                        <Text style={{ color: '#fff', fontWeight: '500', fontSize: 20 }}>
-                            {amount}
-                        </Text>
-                    </View>
                 </View>
                 <TouchableOpacity style={styles.btn}>
-                    <View style={styles.line}></View>
+                    <Icon
+                        name="minus"
+                        size={35}
+                        color="#BB271A"
+                    />
                 </TouchableOpacity>
             </View>
         </View>
@@ -51,53 +50,38 @@ const styles = StyleSheet.create({
     container : {
         width: '100%',
         flexDirection: 'row',
-        marginTop: 20,
-        paddingBottom: 8,
-        borderBottomWidth: 2,
-        borderBottomColor: '#585858',
         margin: 'auto',
+        padding: 2,
+        borderWidth: 2,
+        borderColor: '#585858',
+        marginVertical: 5,
+        borderRadius: 18,
     },
     child : {
         width: '80%',
-        paddingLeft: 5,
+        paddingLeft: 4,
         flexDirection: 'row',
-        justifyContent: 'space-around',
-    },
-    quant : {
-        textAlign: 'center',
-        alignItems: 'center',
-        width: 'auto',
-    },
-    amount : {
-        backgroundColor: '#3A3A3A',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 3,
-        borderRadius: 10,
-        textAlign: 'center',
-        height: 35,
-        width: 50,
-    },
-    btn: {
-        width: 30,
-        // height: '100%',
-        justifyContent: 'center',
-        right: 0,
-        marginRight: 15,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    line : {
-        borderWidth: 3,
-        borderColor: '#C42727',
-        borderRadius: 3,
-        width: '100%',
-    },
-    box: {
-        flexDirection: 'row',
-        width: '100%',
-        alignItems: 'center', 
-        marginTop: 8,
         position: 'relative',
     },
+    quant : {
+        backgroundColor: '#3A3A3A',
+        width: 45,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 12,
+        borderRadius: 12,
+        position: 'absolute',
+        right: 70,
+    },
+    btn : {
+        width: 45,
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 'auto',
+        marginVertical: 12,
+        borderRadius: 12,
+        position: 'absolute',
+        right: 10,
+    }
 })
