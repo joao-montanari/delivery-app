@@ -4,33 +4,34 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
 import Icon from 'react-native-vector-icons/Fontisto';
 
-import { auth } from '../config/firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-
 import Home from "./home";
 import Shopping from "./shopping";
 import SimpleTopBar from "../components/simpletopbar";
+import Cadastrar from "../services/requestsFireBase";
 
 export default function SignUp() {
     const navigate = useNavigation();
+    const [error, setError] = useState(false);
 
-    const [email, onChangeEmail] = useState();
-    const [nome, onChangeNome] = useState();
-    const [password, onChangePassword] = useState();
-    const [confpassword, onChangeConfpassword] = useState();
+    const [email, onChangeEmail] = useState('');
+    const [nome, onChangeNome] = useState('');
+    const [password, onChangePassword] = useState('');
+    const [confpassword, onChangeConfpassword] = useState('');
 
-    useEffect(() => {
-        createUserWithEmailAndPassword(auth, "teste@email.com", "teste123")
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(userCredential)
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(error);
-        });
-    }, [])
+    async function realizarCadastro() {
+        if (email === '' || nome === '' || password === '' || confpassword === '') {
+            setError(true);
+        } else if (password != confpassword) {
+            setError(true);
+        } else {
+            const result = await Cadastrar(email, password, confpassword);
+            onChangeEmail('');
+            onChangeNome('');
+            onChangePassword('');
+            onChangeConfpassword('');
+            setError(false);
+        }
+    }
 
     return(
         <View style = {styles.main}>
@@ -47,21 +48,21 @@ export default function SignUp() {
                 </Text>
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {onChangeEmail}
+                    onChangeText = {() => onChangeEmail(email)}
                     value = {email}
                     placeholder = "E-mail"
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {onChangeNome}
+                    onChangeText = {() => onChangeNome(nome)}
                     value = {nome}
                     placeholder = "Nome"
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {onChangePassword}
+                    onChangeText = {() => onChangePassword(password)}
                     value = {password}
                     placeholder = "Senha"
                     secureTextEntry={true}
@@ -69,17 +70,30 @@ export default function SignUp() {
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {onChangeConfpassword}
+                    onChangeText = {() => onChangeConfpassword(confpassword)}
                     value = {confpassword}
                     placeholder = "Confirme a senha"
                     secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
-                <TouchableOpacity style={styles.btncadastrar} onPress={() => { navigate.navigate(Shopping)}} >
+                
+                {
+                    (error ?
+                        <Text style={{ textAlign: 'center', width: '85%', color: '#D80300', fontWeight: '500'}}>
+                            Erro no cadastro, verifique se todos os campos 
+                            foram preenchidos ou se esse email já foi utilizado.
+                        </Text>
+                    :
+                        null
+                    )
+                }
+
+                <TouchableOpacity style={styles.btncadastrar} onPress={() => realizarCadastro()} >
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>
                         Cadastrar
                     </Text>
                 </TouchableOpacity>
+
                 <Text style = {styles.textopcoes}>
                     Ou continue com
                 </Text>
@@ -125,8 +139,8 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 30,
         fontWeight: 'light',
-        marginTop: 30,
-        marginBottom: 30,
+        marginTop: 20,
+        marginBottom: 20,
     },
     input: {
         backgroundColor: '#3A3A3A',

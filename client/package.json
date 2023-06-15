@@ -19,6 +19,7 @@
     "firebase": "^9.22.2",
     "react": "18.2.0",
     "react-native": "0.71.6",
+    "react-native-dotenv": "^3.4.8",
     "react-native-dropdown-picker": "^5.4.6",
     "react-native-elements": "^3.4.3",
     "react-native-vector-icons": "^9.2.0",

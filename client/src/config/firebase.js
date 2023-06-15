@@ -1,22 +1,35 @@
+// import { initializeApp } from "firebase/app";
+// import AsyncStorage from "@react-native-async-storage/async-storage"
+// import { initializeAuth, getReactNativePersistence } from "firebase/auth/react-native";
+
+// const auth = initializeAuth(app, {
+//     persistence: getReactNativePersistence(AsyncStorage)
+// })
+
 import { initializeApp } from "firebase/app";
-import AsyncStorage from "@react-native-async-storage/async-storage"
-import { initializeAuth, getReactNativePersistence } from "firebase/auth/react-native";
+import { getAuth } from "firebase/auth";
+import {
+  API_KEY,
+  AUTH_DOMAIN,
+  PROJECT_ID,
+  STORAGE_BUCKET,
+  MESSAGING_SENDER_ID,
+  APP_ID,
+  MEASUREMENT_ID,
+} from "@env"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXT46T9lXebKxcQmyWzMZI0eUmF9mvU2I",
-  authDomain: "aplic-delivery.firebaseapp.com",
-  projectId: "aplic-delivery",
-  storageBucket: "aplic-delivery.appspot.com",
-  messagingSenderId: "744538141769",
-  appId: "1:744538141769:web:ae5f1d96c638e297613b98",
-  measurementId: "G-ZJ15TB5GTN"
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE_BUCKET,
+  messagingSenderId: MESSAGING_SENDER_ID,
+  appId: APP_ID,
+  measurementId: MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const auth = initializeAuth(app, {
-    persistence: getReactNativePersistence(AsyncStorage)
-})
+const auth = getAuth(app);
 
 export { auth };
