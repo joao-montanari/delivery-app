@@ -43,7 +43,7 @@ export async function Logar(email, password) {
         .catch((error) => {
             //console.log(error);
             //return ErrorFireBase(error);
-            return "Erro";
+            return "error";
         });
     return result;
 }

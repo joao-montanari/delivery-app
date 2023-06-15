@@ -25,17 +25,17 @@ export default function SignIn() {
         if (data.email === '' || data.password === '') {
             setError(true);
             setMessagemError('Erro ao logar. um ou mais campos não foram preenchidos.');
-        } else {
-            const result = await Logar(data.email, data.password);
-            if (result === 'sucesso') {
-                setData({email: '', password: ''})
-                setError(false);
-                navigate.replace('Shopping');
-            } else {
-                setError(true);
-                setMessagemError('Email ou senha não conferem.');
-            }
+            return
         }
+        const result = await Logar(data.email, data.password);
+        if (result === 'error') {
+            setError(true);
+            setMessagemError('Email ou senha não conferem.');
+            return
+        }
+        setData({email: '', password: ''})
+        setError(false);
+        navigate.replace('Shopping');
     }
 
     return(

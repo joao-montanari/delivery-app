@@ -1,18 +1,31 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native";
 
 import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
 import Card from "../components/card";
-import { auth } from "../config/firebase";
-
+import { db } from "../config/firebase";
+import { addDoc, collection } from 'firebase/firestore';
 
 export default function Shopping() {
     const navigate = useNavigation();
-    const user = auth.currentUser;
+
+    useEffect(() => {
+        async function createProduct() {
+            await addDoc(collection(db, "produtos"), {
+                name: 'tomate',
+                price: 5.99,
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo repellat hic? Iste, sint. Rem, ut illum facilis mollitia magni nisi incidunt nemo facere molestiae temporibus maiores a, provident accusamus.',
+                evaluation: '4.8',
+                image: 'https://recantoinspiracao.com.br/wp-content/uploads/2018/07/A-historia-curiosa-do-tomate-recanto-inspiracao.jpg',
+                supplier: 'Walmart'
+            })
+        }
+        createProduct();
+    }, [])
 
     const Produtos = [
         {
@@ -22,7 +35,7 @@ export default function Shopping() {
             price : 20.01,
             image : 'https://hidrogood.com.br/wp-content/uploads/2019/08/DSC03564-scaled.jpg',
             supplier: 'Casas Bahia', 
-            description: 'Se trata de um produto que faz bem a saude e pode e deve ser usado por todas as pessoas'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo repellat hic? Iste, sint. Rem, ut illum facilis mollitia magni nisi incidunt nemo facere molestiae temporibus maiores a, provident accusamus.'
         },
         {
             id : '2',
