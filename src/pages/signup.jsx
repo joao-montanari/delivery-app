@@ -1,42 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { useState } from "react";
 import Icon from 'react-native-vector-icons/Fontisto';
 
-import Home from "./home";
-import Shopping from "./shopping";
 import SimpleTopBar from "../components/simpletopbar";
-import Cadastrar from "../services/requestsFireBase";
+import { Cadastrar } from "../services/requestsFireBase";
+import Alert from "../components/alert";
+import { changeData } from "../utils/common";
 
 export default function SignUp() {
     const navigate = useNavigation();
     const [error, setError] = useState(false);
-
-    const [email, onChangeEmail] = useState('');
-    const [nome, onChangeNome] = useState('');
-    const [password, onChangePassword] = useState('');
-    const [confpassword, onChangeConfpassword] = useState('');
+    const [mensagemError, setMessagemError] = useState('');
+    const [data, setData] = useState({email: '', name: '', password: '', confpassword: ''})
 
     async function realizarCadastro() {
-        if (email === '' || nome === '' || password === '' || confpassword === '') {
+        if (data.email === '' || data.nome === '' || data.password === '' || data.confpassword === '') {
             setError(true);
-        } else if (password != confpassword) {
+            setMessagemError('Erro no cadastro, verifique se todos os campos foram preenchidos.');
+        } else if (data.password != data.confpassword) {
             setError(true);
+            setMessagemError("Erro de cadastro, a senha informada não é idêntica a senha do campo 'confirme a senha'.")
         } else {
-            const result = await Cadastrar(email, password, confpassword);
-            onChangeEmail('');
-            onChangeNome('');
-            onChangePassword('');
-            onChangeConfpassword('');
-            setError(false);
+            const result = await Cadastrar(data.email, data.password, data.confpassword);
+            if (result === 'sucesso') {
+                setData({email: '', name: '', password: '', confpassword: ''})
+                setError(false);
+                navigate.replace('Shopping');
+            } else {
+                setError(true);
+                setMessagemError(result);
+            }
         }
     }
 
     return(
         <View style = {styles.main}>
             <SimpleTopBar
-                page={Home}
+                page={'Home'}
             />
             <View style = {styles.container}>
                 <Image
@@ -48,45 +49,34 @@ export default function SignUp() {
                 </Text>
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {() => onChangeEmail(email)}
-                    value = {email}
+                    onChangeText = {value => changeData('email', value, data, setData)}
+                    value = {data.email}
                     placeholder = "E-mail"
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {() => onChangeNome(nome)}
-                    value = {nome}
+                    onChangeText = {value => changeData('name', value, data, setData)}
+                    value = {data.name}
                     placeholder = "Nome"
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {() => onChangePassword(password)}
-                    value = {password}
+                    onChangeText = {value => changeData('password', value, data, setData)}
+                    value = {data.password}
                     placeholder = "Senha"
                     secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {() => onChangeConfpassword(confpassword)}
-                    value = {confpassword}
+                    onChangeText = {value => changeData('confpassword', value, data, setData)}
+                    value = {data.confpassword}
                     placeholder = "Confirme a senha"
                     secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
-                
-                {
-                    (error ?
-                        <Text style={{ textAlign: 'center', width: '85%', color: '#D80300', fontWeight: '500'}}>
-                            Erro no cadastro, verifique se todos os campos 
-                            foram preenchidos ou se esse email já foi utilizado.
-                        </Text>
-                    :
-                        null
-                    )
-                }
 
                 <TouchableOpacity style={styles.btncadastrar} onPress={() => realizarCadastro()} >
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>
@@ -119,6 +109,12 @@ export default function SignUp() {
                         />
                     </TouchableOpacity>
                 </View>
+                <Alert
+                    mensagem={mensagemError}
+                    error={error}
+                    setError={setError}
+                    timer={1500}
+                />
             </View>
         </View>
     )

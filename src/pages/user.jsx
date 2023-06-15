@@ -5,10 +5,7 @@ import { useState } from "react";
 import Icon from 'react-native-vector-icons/EvilIcons'
 
 import SimpleTopBar from '../components/simpletopbar';
-import Shopping from './shopping';
-import Home from './home';
-import Password from "./password";
-import Address from "./address";
+import { auth } from "../config/firebase";
 
 export default function User() {
     const navigate = useNavigation();
@@ -21,23 +18,18 @@ export default function User() {
         console.log(email);
     }
 
+    async function deslogar() {
+        await auth.signOut();
+        navigate.navigate('Home');
+    }
+
     return (
         <View style={styles.main}>
             <SimpleTopBar
-                page={Shopping}
+                page={'Shopping'}
                 title={'Seu Perfil'}
             />
             <View style={styles.container}>
-                {/* <TouchableOpacity style={styles.btnimage}>
-                    <Image
-                        source={require('../../assets/icons/userimg.svg')}
-                        style={{ width: 130, height: 130 }}
-                    />
-                    <Image
-                        source={require('../../assets/icons/greenpen.svg')}
-                        style={styles.pen}
-                    />
-                </TouchableOpacity> */}
                 <Icon
                     name='user'
                     size={180}
@@ -73,12 +65,12 @@ export default function User() {
                     placeholderTextColor='#A9A9A9'
                 />
                 <View style={styles.btns}>
-                    <TouchableOpacity style={styles.btnopc} onPress={() => navigate.navigate(Password) }>
+                    <TouchableOpacity style={styles.btnopc} onPress={() => navigate.navigate('Password') }>
                         <Text style={{ color: '#94DD26', margin: 'auto', fontSize: 20, fontWeight: '500' }}>
                             Senha
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btnopc} onPress={() => navigate.navigate(Address)}>
+                    <TouchableOpacity style={styles.btnopc} onPress={() => navigate.navigate('Address')}>
                         <Text style={{ color: '#94DD26', margin: 'auto', fontSize: 20, fontWeight: '500' }}>
                             Endereços
                         </Text>
@@ -89,7 +81,7 @@ export default function User() {
                         Salvar
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnlogout} onPress={() => navigate.navigate(Home)}>
+                <TouchableOpacity style={styles.btnlogout} onPress={deslogar}>
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: '500', fontSize: 16, }}>
                         Logout
                     </Text>

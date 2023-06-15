@@ -3,10 +3,6 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native"; 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import Shopping from "../pages/shopping";
-import Cart from "../pages/cart";
-import User from "../pages/user";
-
 export default function BottomBar() {
     const navigate = useNavigation();
 
@@ -14,14 +10,14 @@ export default function BottomBar() {
         <View style={styles.main}>
             <View style={styles.container}>
                 <View style={styles.child}>
-                    <TouchableOpacity onPress={() => {navigate.navigate(Shopping)}}>
+                    <TouchableOpacity onPress={() => {navigate.navigate('Shopping')}}>
                         <Icon
                             name="home"
                             size={32}
                             color="#E6E6E6"
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => {navigate.navigate(Cart)}}>
+                    <TouchableOpacity onPress={() => {navigate.navigate('Cart')}}>
                         <Icon
                             name="store"
                             size={32}
@@ -35,7 +31,7 @@ export default function BottomBar() {
                             color="#E6E6E6"
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => {navigate.navigate(User)}}>
+                    <TouchableOpacity onPress={() => {navigate.navigate('User')}}>
                         <Icon
                             name="user-alt"
                             size={32}

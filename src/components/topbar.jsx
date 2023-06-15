@@ -5,9 +5,11 @@ import Icon from 'react-native-vector-icons/Fontisto';
 import { useNavigation } from '@react-navigation/native';
 
 import Cart from "../pages/cart";
+import { auth } from "../config/firebase";
 
 export default function TopBar({ name, photo }) {
     const navigate = useNavigation();
+    const user = auth.currentUser;
 
     return (
         <View style={style.container}>
@@ -17,12 +19,12 @@ export default function TopBar({ name, photo }) {
                         source = {{ uri: photo }}
                         style = {{ width: 50, height: 50 }}
                     />
-                    <View style={{ marginLeft: 10 }}>
+                    <View style={{ marginLeft: 10, width: '70%' }}>
                         <Text style={{ color: '#94DD26', fontSize: 16, fontWeight: 'bold' }}>
                             Usuário:
                         </Text>
-                        <Text style={{ color: '#fff', fontSize: 16 }}>
-                            {name}
+                        <Text style={{ color: '#fff', fontSize: 16 }} numberOfLines={1}>
+                            {user.email}
                         </Text>
                     </View>
                 </View>

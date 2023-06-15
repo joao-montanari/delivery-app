@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import SimpleTopBar from "../components/simpletopbar";
-import User from "./user";
 import { useState } from "react";
 
 export default function Password() {
@@ -15,7 +14,7 @@ export default function Password() {
     return (
         <View style={styles.main}>
             <SimpleTopBar
-                page={User}
+                page={'User'}
                 title="Alterar senha"
             />
             <View style={styles.container}>

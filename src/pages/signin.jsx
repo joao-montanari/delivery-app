@@ -4,20 +4,44 @@ import React from "react";
 import { useState } from "react";
 import Icon from "react-native-vector-icons/Fontisto";
 
-import Home from "./home";
-import Shopping from "./shopping";
 import SimpleTopBar from "../components/simpletopbar";
+import { Logar } from "../services/requestsFireBase";
+import Alert from "../components/alert";
 
 export default function SignIn() {
     const navigate = useNavigation();
+    const [error, setError] = useState(false);
+    const [mensagemError, setMessagemError] = useState('');
+    const [data, setData] = useState({email: '', password: ''})
 
-    const [password, onChangePassword] = useState();
-    const [email, onChangeEmail] = useState();
+    const changeData = (key, value) => {
+        setData({
+            ...data,
+            [key]: value
+        })
+    }
+
+    async function realizarLogin() {
+        if (data.email === '' || data.password === '') {
+            setError(true);
+            setMessagemError('Erro ao logar. um ou mais campos não foram preenchidos.');
+        } else {
+            const result = await Logar(data.email, data.password);
+            if (result === 'sucesso') {
+                setData({email: '', password: ''})
+                setError(false);
+                navigate.replace('Shopping');
+            } else {
+                setError(true);
+                setMessagemError('Email ou senha não conferem.');
+            }
+        }
+    }
 
     return(
         <View style={styles.main}>
             <SimpleTopBar
-                page={Home}
+                page={'Home'}
             />
             <View style={styles.container}>
                 <Image
@@ -29,22 +53,22 @@ export default function SignIn() {
                 </Text>
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {onChangeEmail}
-                    value = {email}
+                    onChangeText = {value => changeData('email', value)}
+                    value = {data.email}
                     placeholder = "E-mail"
                     placeholderTextColor='#A9A9A9'
                 />
                 <TextInput
                     style = {styles.input}
-                    onChangeText = {onChangePassword}
-                    value = {password}
+                    onChangeText = {value => changeData('password', value)}
+                    value = {data.password}
                     placeholder = "Senha"
                     secureTextEntry={true}
                     placeholderTextColor='#A9A9A9'
                 />
                 <TouchableOpacity 
                     style={styles.btnentrar} 
-                    onPress={() => { navigate.navigate(Shopping) }}
+                    onPress={() => realizarLogin()}
                 >
                     <Text style={{ margin: 'auto', color: 'white', fontWeight: 'bold', fontSize: 18, }}>
                         Entrar
@@ -75,6 +99,12 @@ export default function SignIn() {
                         />
                     </TouchableOpacity>
                 </View>
+                <Alert
+                    mensagem={mensagemError}
+                    error={error}
+                    setError={setError}
+                    time={1500}
+                />
             </View>
         </View>
     )

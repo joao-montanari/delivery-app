@@ -7,7 +7,6 @@ import Icon from 'react-native-vector-icons/Fontisto';
 // import DropDownPicker from "react-native-dropdown-picker";
 
 import SimpleTopBar from "../components/simpletopbar";
-import Cart from "./cart";
 import Select from "../components/select";
 
 export default function Buy() {
@@ -126,7 +125,7 @@ export default function Buy() {
     return (
         <View style={styles.main}>
             <SimpleTopBar
-                page={Cart}
+                page={'Cart'}
                 title={'Sua compra'}
             />
             <View style={styles.container}>

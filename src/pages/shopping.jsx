@@ -7,21 +7,12 @@ import { SafeAreaView } from "react-native";
 import TopBar from "../components/topbar";
 import BottomBar from "../components/bottombar";
 import Card from "../components/card";
-
-import ProductDetail from "./productdetail";
-
-import Vegetables from './categories/vegetables';
-import Salads from './categories/salads';
-import Fruits from "./categories/fruits";
-import Sauces from './categories/sauces';
-import Fish from './categories/fish';
-import Cultivation from './categories/cultivation';
-import Plants from './categories/plants';
-import Kitchen from './categories/kitchen';
+import { auth } from "../config/firebase";
 
 
 export default function Shopping() {
     const navigate = useNavigation();
+    const user = auth.currentUser;
 
     const Produtos = [
         {
@@ -95,13 +86,6 @@ export default function Shopping() {
             />
         </TouchableOpacity>
     );
-
-    const id = 1;
-    const nome = 'pepino';
-    const product = {
-        name : 'joao montanari',
-        id : 1
-    }
     
     return (
         <View style={styles.main}>
@@ -130,7 +114,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Salads) }}
+                            onPress={() => { navigate.navigate('Salads') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/salada.png')}
@@ -142,7 +126,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Fruits) }}
+                            onPress={() => { navigate.navigate('Fruits') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/fruta.png')}
@@ -154,7 +138,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Sauces) }}
+                            onPress={() => { navigate.navigate('Sauces') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/molho.png')}
@@ -168,7 +152,7 @@ export default function Shopping() {
                     <View style={styles.child}>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Fish) }}
+                            onPress={() => { navigate.navigate('Fish') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/peixe.png')}
@@ -180,7 +164,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Cultivation) }}
+                            onPress={() => { navigate.navigate('Cultivation') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/cultivo.png')}
@@ -192,7 +176,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Plants) }}
+                            onPress={() => { navigate.navigate('Plants') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/planta.png')}
@@ -204,7 +188,7 @@ export default function Shopping() {
                         </TouchableOpacity>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={() => { navigate.navigate(Kitchen) }}
+                            onPress={() => { navigate.navigate('Kitchen') }}
                         >
                             <Image
                                 source = {require('../../assets/icons/png/cozinha.png')}

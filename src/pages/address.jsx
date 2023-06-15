@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Fontisto';
 
 import SimpleTopBar from "../components/simpletopbar";
-import User from "./user";
 import AddAddress from "./addaddress";
 
 export default function Address() {
@@ -171,7 +170,7 @@ export default function Address() {
     return (
         <View style={styles.main}>
             <SimpleTopBar
-                page={User}
+                page={'User'}
                 title='Endereços salvos'
             />
             <View style={styles.container}>
